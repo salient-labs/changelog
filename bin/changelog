@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+use Lkrms\Cli\CliApplication;
+use Salient\Changelog\Command\FromGitHubReleaseNotes;
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+(new CliApplication(dirname(__DIR__)))
+    ->oneCommand(FromGitHubReleaseNotes::class)
+    ->loadCache()
+    ->runAndExit();

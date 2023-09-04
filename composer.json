@@ -1,0 +1,44 @@
+{
+    "name": "salient/changelog",
+    "description": "Changelog generator",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/salient-labs/php-changelog/issues",
+        "source": "https://github.com/salient-labs/php-changelog"
+    },
+    "authors": [
+        {
+            "name": "Luke Arms",
+            "email": "luke@linacreative.com"
+        }
+    ],
+    "bin": [
+        "bin/changelog"
+    ],
+    "require": {
+        "php": ">=7.4",
+        "lkrms/util": "^0.20.54"
+    },
+    "require-dev": {
+        "phpstan/extension-installer": "^1",
+        "phpstan/phpstan": "^1",
+        "phpstan/phpstan-deprecation-rules": "^1",
+        "phpunit/phpunit": "^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Salient\\Changelog\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Salient\\Changelog\\Tests\\": "tests/unit/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    }
+}

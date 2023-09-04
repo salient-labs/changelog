@@ -1,0 +1,17 @@
+/composer.lock
+/vendor
+composer.phar
+
+phpstan.neon
+
+phpunit.xml
+.phpunit.*
+
+.env
+*.generated.*
+*.log
+/var
+
+/.ci
+/build
+/docs/api

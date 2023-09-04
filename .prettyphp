@@ -1,0 +1,9 @@
+{
+    "src": [
+        "bin",
+        "src",
+        "tests\/unit"
+    ],
+    "includeIfPhp": true,
+    "heredocIndent": "none"
+}
