@@ -1,0 +1,40 @@
+{
+    "output": "build/dist/changelog.phar",
+    "chmod": "0777",
+    "files": [
+        "bin/changelog"
+    ],
+    "finder": [
+        {
+            "in": "src"
+        },
+        {
+            "in": "vendor",
+            "notName": [
+                "/^(?:LICENSE|README|composer\\.(?:json|lock))$|\\.md$/"
+            ],
+            "notPath": [
+                "/^bin\\//",
+                "/^(?:[^\\/]+\\/){2}(?:tests?(?:_|\\b).*|docs?|apigen)\\//i",
+                "/^(?:[^\\/]+\\/){2}(?:phpunit|phpstan)\\b[^\\/]+$/i",
+                "/^lkrms\\/util\\/(bin|lib|scripts|src\\/Sync)/",
+                "/^lkrms\\/dice\\/src\\/(?!Dice.*\\.php$)/",
+                "/^psr\\/log\\/Psr\\/Log\\/Test\\//",
+                "/^filp\\/whoops\\/src\\/Whoops\\/Resources\\/(css|js|views)\\//"
+            ]
+        }
+    ],
+    "alias": "changelog.phar",
+    "banner": [
+        "This file is part of salient/changelog",
+        "",
+        "(c) Luke Arms <luke@linacreative.com>",
+        "",
+        "For the full copyright and license information, please view the LICENSE",
+        "file that was distributed with this source code."
+    ],
+    "compactors": [
+        "KevinGH\\Box\\Compactor\\Json",
+        "KevinGH\\Box\\Compactor\\Php"
+    ]
+}

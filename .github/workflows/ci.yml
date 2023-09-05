@@ -3,6 +3,8 @@ name: CI
 on:
   pull_request:
 
+  workflow_call:
+
   # Remove once pull requests are set up
   workflow_dispatch:
 
