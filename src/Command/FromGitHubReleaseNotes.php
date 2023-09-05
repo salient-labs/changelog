@@ -235,7 +235,7 @@ EOF)
                     $input = substr($input, 0, $pos);
                 }
             }
-            $fp = fopen($this->OutputFile, 'w');
+            $fp = fopen($this->OutputFile, 'wb');
             $input = rtrim($input);
             if ($input !== '') {
                 fprintf($fp, "%s{$eol}{$eol}", rtrim($input));
