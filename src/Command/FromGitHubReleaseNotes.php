@@ -15,6 +15,7 @@ use Lkrms\Facade\File;
 use Lkrms\Utility\Convert;
 use Lkrms\Utility\Env;
 use Lkrms\Utility\Pcre;
+use Lkrms\Utility\Str;
 use DateTimeImmutable;
 
 /**
@@ -267,6 +268,8 @@ EOF)
                     continue;
                 }
 
+                $note = Str::setEol($note, $eol);
+
                 if ($this->Headings === 'all' || $i !== 0) {
                     if ($releaseUrls[$tag] !== $releaseUrl) {
                         $blocks[] = sprintf('### %s [%s][%s %s]', $this->Names[$i], $tag, $this->Repos[$i], $tag);
@@ -288,7 +291,7 @@ EOF)
 
             fprintf($fp, "## [%s] - %s{$eol}{$eol}", $tag, $releaseDates[$tag]->format('Y-m-d'));
 
-            if ($missing) {
+            if ($missing && array_key_first($releaseNotes) !== $tag) {
                 foreach ($missing as $repo) {
                     fprintf($fp, "> %s %s was not released{$eol}", $repo, $tag);
                 }
