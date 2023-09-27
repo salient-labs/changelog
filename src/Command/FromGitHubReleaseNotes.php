@@ -17,6 +17,7 @@ use Lkrms\Utility\Env;
 use Lkrms\Utility\Pcre;
 use Lkrms\Utility\Str;
 use DateTimeImmutable;
+use ReflectionParameter;
 
 /**
  * Generate a changelog from GitHub release notes across one or more repos
@@ -231,6 +232,11 @@ EOF)
          */
         $prevReleases = [];
 
+        $linesToListsRegex =
+            $this->Merge
+                ? (new ReflectionParameter([Convert::class, 'linesToLists'], 'regex'))->getDefaultValue()
+                : null;
+
         // Populate the arrays above
         foreach ($this->Repos as $i => $repo) {
             if (!Pcre::match('%^(?P<owner>[^/]+)/(?P<repo>[^/]+)$%', $repo, $matches)) {
@@ -358,7 +364,8 @@ EOF)
             }
 
             if ($this->Merge) {
-                $merged = Convert::linesToLists(implode("\n\n", $blocks), "\n\n");
+                $blocks = implode("\n\n", $blocks);
+                $merged = Convert::linesToLists($blocks, "\n\n", null, $linesToListsRegex, false, true);
                 fprintf($fp, "%s{$eol}{$eol}", Str::setEol($merged, $eol));
                 continue;
             }
