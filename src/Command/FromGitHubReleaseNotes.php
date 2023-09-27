@@ -20,7 +20,6 @@ use DateTimeImmutable;
 
 /**
  * Generate a changelog from GitHub release notes across one or more repos
- *
  */
 final class FromGitHubReleaseNotes extends CliCommand
 {
@@ -46,7 +45,11 @@ final class FromGitHubReleaseNotes extends CliCommand
 
     private ?string $Headings;
 
+    private ?bool $Merge;
+
     private ?string $OutputFile;
+
+    private ?bool $Flush;
 
     private ?bool $Quiet;
 
@@ -128,6 +131,15 @@ EOF)
                 ->defaultValue('auto')
                 ->bindTo($this->Headings),
             Option::build()
+                ->long('merge')
+                ->short('1')
+                ->description(<<<EOF
+Merge release notes?
+
+If this option is given, `-h/--headings` is ignored.
+EOF)
+                ->bindTo($this->Merge),
+            Option::build()
                 ->long('output')
                 ->short('o')
                 ->valueName('file')
@@ -139,6 +151,13 @@ preserved.
 EOF)
                 ->optionType(OptionType::VALUE)
                 ->bindTo($this->OutputFile),
+            Option::build()
+                ->long('flush')
+                ->short('f')
+                ->description(<<<EOF
+Flush cached release notes
+EOF)
+                ->bindTo($this->Flush),
             Option::build()
                 ->long('quiet')
                 ->short('q')
@@ -184,14 +203,35 @@ EOF)
             $headers = $headers->applyAccessToken($token);
         }
 
-        /** @var array<int,string> */
+        /**
+         * Index => "https://github.com/{owner}/{repo}"
+         *
+         * @var array<int,string>
+         */
         $repoUrls = [];
-        /** @var array<string,array<int,string|null>> */
+
+        /**
+         * Tag => repo index => notes
+         *
+         * @var array<string,array<int,string|null>>
+         */
         $releaseNotes = [];
-        /** @var array<string,DateTimeImmutable> */
+
+        /**
+         * Tag => date
+         *
+         * @var array<string,DateTimeImmutable>
+         */
         $releaseDates = [];
-        /** @var array<int,array<string,string>> */
+
+        /**
+         * Repo index => tag => subsequent tag
+         *
+         * @var array<int,array<string,string>>
+         */
         $prevReleases = [];
+
+        // Populate the arrays above
         foreach ($this->Repos as $i => $repo) {
             if (!Pcre::match('%^(?P<owner>[^/]+)/(?P<repo>[^/]+)$%', $repo, $matches)) {
                 throw new CliInvalidArgumentsException(sprintf('invalid repo: %s', $repo));
@@ -203,7 +243,13 @@ EOF)
             $repoUrls[$i] = sprintf('https://github.com/%s/%s', $owner, $repo);
 
             $this->Quiet || Console::info('Retrieving releases from', $url);
-            $releases = (new Curler("$url?per_page=100", $headers, null, true))->getAllLinked();
+            $releases = Curler::build()
+                ->baseUrl("$url?per_page=100")
+                ->headers($headers)
+                ->cacheResponse()
+                ->expiry(600)
+                ->flush($this->Flush ?? false)
+                ->getAllLinked();
             $this->Quiet || Console::log(Convert::plural(count($releases), 'release', null, true) . ' found');
 
             $prevTag = null;
@@ -223,8 +269,10 @@ EOF)
             }
         }
 
+        // Sort notes by tag, in descending order
         uksort($releaseNotes, fn($a, $b) => -version_compare($a, $b));
 
+        // Extract header content from the output file if it already exists
         $eol = PHP_EOL;
         if ($this->OutputFile !== null) {
             $input = '';
@@ -244,6 +292,7 @@ EOF)
         } else {
             $fp = STDOUT;
         }
+
         $releaseUrls = [];
         $repoReleaseUrls = [];
         foreach ($releaseNotes as $tag => $notes) {
@@ -269,6 +318,12 @@ EOF)
                 }
 
                 $note = Str::setEol($note, $eol);
+                $noteCount++;
+
+                if ($this->Merge) {
+                    $blocks[] = $note;
+                    continue;
+                }
 
                 if ($this->Headings === 'all' || $i !== 0) {
                     if ($releaseUrls[$tag] !== $releaseUrl) {
@@ -285,17 +340,27 @@ EOF)
                         ? $note
                         : Pcre::replace('/^#{3,5}(?= )/m', '#$0', $note);
 
-                $noteCount++;
                 $lastNoteRepo = $i;
             }
 
             fprintf($fp, "## [%s] - %s{$eol}{$eol}", $tag, $releaseDates[$tag]->format('Y-m-d'));
 
             if ($missing && array_key_first($releaseNotes) !== $tag) {
+                $count = 0;
                 foreach ($missing as $repo) {
+                    if ($count) {
+                        fprintf($fp, "{$eol}");
+                    }
                     fprintf($fp, "> %s %s was not released{$eol}", $repo, $tag);
+                    $count++;
                 }
                 fprintf($fp, "{$eol}");
+            }
+
+            if ($this->Merge) {
+                $merged = Convert::linesToLists(implode("\n\n", $blocks), "\n\n");
+                fprintf($fp, "%s{$eol}{$eol}", Str::setEol($merged, $eol));
+                continue;
             }
 
             // If the repo name is superfluous, remove it

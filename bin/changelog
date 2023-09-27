@@ -8,5 +8,5 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 (new CliApplication(dirname(__DIR__)))
     ->oneCommand(FromGitHubReleaseNotes::class)
-    ->loadCache()
+    ->startCache()
     ->runAndExit();
