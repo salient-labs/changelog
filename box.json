@@ -15,9 +15,9 @@
             ],
             "notPath": [
                 "/^bin\\//",
-                "/^(?:[^\\/]+\\/){2}(?:tests?(?:_|\\b).*|docs?|apigen)\\//i",
+                "/^(?:[^\\/]+\\/){2}(?:tests?(?:_|\\b).*|docs?)\\//i",
                 "/^(?:[^\\/]+\\/){2}(?:phpunit|phpstan)\\b[^\\/]+$/i",
-                "/^lkrms\\/util\\/(bin|lib|scripts|src\\/Sync)/",
+                "/^lkrms\\/util\\/(?:bin|lib|scripts|tools|src\\/(?:Db|Sync))/",
                 "/^lkrms\\/dice\\/src\\/(?!Dice.*\\.php$)/",
                 "/^psr\\/log\\/Psr\\/Log\\/Test\\//"
             ]
