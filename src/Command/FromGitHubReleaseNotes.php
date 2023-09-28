@@ -147,7 +147,7 @@ EOF)
                 ->description(<<<EOF
 Write output to a file
 
-If <file> already exists, content before the first version heading ('## [') is
+If <file> already exists, content before the first version heading ('## \[') is
 preserved.
 EOF)
                 ->optionType(OptionType::VALUE)
