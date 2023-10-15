@@ -7,7 +7,6 @@ phpunit.xml
 .phpunit.*
 
 .env
-*.generated.*
 *.log
 /var
 
