@@ -292,9 +292,24 @@ EOF)
             }
             $fp = fopen($this->OutputFile, 'wb');
             $input = rtrim($input);
-            if ($input !== '') {
-                fprintf($fp, "%s{$eol}{$eol}", rtrim($input));
+            if ($input === '') {
+                $input = <<<EOF
+# Changelog
+
+Notable changes to this project are documented in this file.
+
+It is generated from the GitHub release notes of the project by
+[salient/changelog][].
+
+The format is based on [Keep a Changelog][], and this project adheres to
+[Semantic Versioning][].
+
+[salient/changelog]: https://github.com/salient-labs/php-changelog
+[Keep a Changelog]: https://keepachangelog.com/en/1.1.0/
+[Semantic Versioning]: https://semver.org/spec/v2.0.0.html
+EOF;
             }
+            fprintf($fp, "%s{$eol}{$eol}", $input);
         } else {
             $fp = STDOUT;
         }
@@ -311,9 +326,9 @@ EOF)
 
                 $releaseUrl =
                     $repoUrls[$i]
-                        . ((($prevTag = $prevReleases[$i][$tag] ?? null) === null)
-                            ? "/releases/tag/{$tag}"
-                            : "/compare/{$prevTag}...{$tag}");
+                    . ((($prevTag = $prevReleases[$i][$tag] ?? null) === null)
+                        ? "/releases/tag/{$tag}"
+                        : "/compare/{$prevTag}...{$tag}");
 
                 if (($releaseUrls[$tag] ?? null) === null) {
                     $releaseUrls[$tag] = $releaseUrl;
