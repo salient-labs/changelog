@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4311fdf8f3cb4f0e7c54da09f2fe0d9b",
+    "content-hash": "922fe67f0150e2ef1f40ca8be5058a21",
     "packages": [
         {
             "name": "lkrms/dice",
@@ -51,16 +51,16 @@
         },
         {
             "name": "lkrms/util",
-            "version": "v0.20.71",
+            "version": "v0.21.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lkrms/php-util.git",
-                "reference": "627c75ec353c56e56d4ba7c263f72d7a368aa6d3"
+                "reference": "3b5022cdcf585bce2ad333327a20c004f5577724"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lkrms/php-util/zipball/627c75ec353c56e56d4ba7c263f72d7a368aa6d3",
-                "reference": "627c75ec353c56e56d4ba7c263f72d7a368aa6d3",
+                "url": "https://api.github.com/repos/lkrms/php-util/zipball/3b5022cdcf585bce2ad333327a20c004f5577724",
+                "reference": "3b5022cdcf585bce2ad333327a20c004f5577724",
                 "shasum": ""
             },
             "require": {
@@ -76,7 +76,6 @@
                 "clue/phar-composer": "^1",
                 "firebase/php-jwt": "^6",
                 "league/oauth2-client": "^2",
-                "lkrms/pretty-php": "0.4.36",
                 "phpstan/extension-installer": "^1",
                 "phpstan/phpstan": "^1",
                 "phpstan/phpstan-deprecation-rules": "^1",
@@ -94,11 +93,6 @@
                 "bin/lk-util"
             ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "0.20.x-dev"
-                }
-            },
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -117,9 +111,9 @@
             "description": "A lightweight PHP toolkit for expressive backend/CLI apps",
             "support": {
                 "issues": "https://github.com/lkrms/php-util/issues",
-                "source": "https://github.com/lkrms/php-util/tree/v0.20.71"
+                "source": "https://github.com/lkrms/php-util/tree/v0.21.2"
             },
-            "time": "2023-10-12T06:31:46+00:00"
+            "time": "2023-11-07T11:00:33+00:00"
         },
         {
             "name": "psr/container",
