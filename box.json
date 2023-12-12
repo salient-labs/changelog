@@ -17,8 +17,8 @@
                 "/^bin\\//",
                 "/^(?:[^\\/]+\\/){2}(?:tests?(?:_|\\b).*|docs?)\\//i",
                 "/^(?:[^\\/]+\\/){2}(?:phpunit|phpstan)\\b[^\\/]+$/i",
-                "/^lkrms\\/util\\/(?:bin|lib|scripts|tools|src\\/(?:Db|Sync))/",
-                "/^lkrms\\/dice\\/src\\/(?!Dice.*\\.php$)/",
+                "/^lkrms\\/util\\/(?:bin|lk-util|src\\/(?:Db|Sync))\\//",
+                "/^lkrms\\/dice\\/src\\/Loader\\//",
                 "/^psr\\/log\\/Psr\\/Log\\/Test\\//"
             ]
         }
