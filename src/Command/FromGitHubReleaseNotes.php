@@ -2,15 +2,15 @@
 
 namespace Salient\Changelog\Command;
 
-use Lkrms\Auth\AccessToken;
 use Lkrms\Cli\Catalog\CliOptionType as OptionType;
 use Lkrms\Cli\Catalog\CliOptionValueType as ValueType;
 use Lkrms\Cli\Exception\CliInvalidArgumentsException;
 use Lkrms\Cli\CliCommand;
 use Lkrms\Cli\CliOption as Option;
 use Lkrms\Curler\Curler;
-use Lkrms\Curler\CurlerHeaders;
 use Lkrms\Facade\Console;
+use Lkrms\Http\Auth\AccessToken;
+use Lkrms\Http\HttpHeaders;
 use Lkrms\Utility\Convert;
 use Lkrms\Utility\Env;
 use Lkrms\Utility\File;
@@ -198,10 +198,11 @@ EOF)
             }
         }
 
-        $headers = new CurlerHeaders();
+        $headers = new HttpHeaders();
         if (($token = Env::get('GITHUB_TOKEN', null)) !== null) {
             $token = new AccessToken($token, 'Bearer', null);
-            $headers = $headers->applyAccessToken($token);
+            $headers = $headers->authorize($token);
+            Console::log('GITHUB_TOKEN value applied from environment to GitHub API requests');
         }
 
         /**
