@@ -6,6 +6,19 @@ changelog - Generate a changelog from GitHub release notes
 
 **`changelog`** \[*<u>option</u>*]... \[**`--`**] *<u>owner</u>*/*<u>repo</u>*...
 
+## DESCRIPTION
+
+If **`GITHUB_TOKEN`** is found in the environment, its value is applied to the
+**`Authorization`** header of requests to the GitHub REST API.
+
+To generate a changelog for releases in one or more private GitHub
+repositories, a personal access token with read access to the contents of
+each repository must be provided.
+
+Releases in public repositories can be read without a personal access token,
+but providing one is recommended anyway because unauthenticated requests are
+rate-limited to 60 per hour per originating IP address.
+
 ## OPTIONS
 
 - *<u>owner</u>*/*<u>repo</u>*...
