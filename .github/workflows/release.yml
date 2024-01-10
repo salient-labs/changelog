@@ -46,9 +46,17 @@ jobs:
           scripts/build.sh ${{ github.ref_name }}
           printf 'phar_path=%s\n' build/dist/* | head -n1 >>"$GITHUB_ENV"
 
+      - name: Sign phar
+        run: |
+          gpg --batch --import <<<"$GPG_KEY"
+          gpg --batch --pinentry-mode loopback --passphrase-fd 0 --detach-sign --local-user github@lkr.ms --armor --output ${{ env.phar_path }}.asc ${{ env.phar_path }} <<<"$GPG_PASSPHRASE"
+        env:
+          GPG_KEY: ${{ secrets.GPG_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
       # Requires Actions > General > Workflow permissions > Read and write permissions
       - name: Create release
         run: |
-          gh release create ${{ github.ref_name }} ${{ env.phar_path }} --generate-notes --verify-tag
+          gh release create ${{ github.ref_name }} ${{ env.phar_path }} ${{ env.phar_path }}.asc --generate-notes --verify-tag
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
