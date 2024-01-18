@@ -54,5 +54,6 @@ while [[ ${1-} == -* ]]; do
 done
 
 if ((ASSETS)); then
-    generate docs/Usage.md bin/changelog _md
+    # yes = collapse options in synopsis to "[options]"
+    generate docs/Usage.md bin/changelog _md yes
 fi
