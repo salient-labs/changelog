@@ -250,11 +250,6 @@ rate-limited to 60 per hour per originating IP address.
 EOF;
     }
 
-    protected function getHelpSections(): ?array
-    {
-        return null;
-    }
-
     protected function run(string ...$args)
     {
         Console::registerStderrTarget();
