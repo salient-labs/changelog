@@ -13,9 +13,9 @@ use Lkrms\Curler\Curler;
 use Lkrms\Facade\Console;
 use Lkrms\Http\OAuth2\AccessToken;
 use Lkrms\Http\HttpHeaders;
-use Lkrms\Utility\Convert;
 use Lkrms\Utility\Env;
 use Lkrms\Utility\File;
+use Lkrms\Utility\Inflect;
 use Lkrms\Utility\Pcre;
 use Lkrms\Utility\Str;
 use DateTimeImmutable;
@@ -329,7 +329,10 @@ EOF;
                 ->expiry(600)
                 ->flush($this->Flush)
                 ->getAllLinked();
-            $this->Quiet || Console::log(Convert::plural(count($releases), 'release', null, true) . ' found');
+            $this->Quiet || Console::log(Inflect::format(
+                '{{#}} {{#:release}} found',
+                count($releases),
+            ));
 
             $prevTag = null;
             foreach ($releases as $release) {
@@ -471,7 +474,7 @@ EOF;
 
             if ($this->Merge) {
                 $blocks = implode("\n\n", $blocks);
-                $merged = Convert::linesToLists($blocks, "\n\n", null, $this->getLinesToListsRegex(), false, true);
+                $merged = Str::mergeLists($blocks, "\n\n", null, $this->getLinesToListsRegex(), false, true);
                 fprintf($fp, "%s{$eol}{$eol}", Str::setEol($merged, $eol));
                 continue;
             }
@@ -519,7 +522,7 @@ EOF;
             return self::$LinesToListsRegex;
         }
         /** @var string */
-        $default = (new ReflectionParameter([Convert::class, 'linesToLists'], 'regex'))->getDefaultValue();
+        $default = (new ReflectionParameter([Str::class, 'mergeLists'], 'regex'))->getDefaultValue();
         return self::$LinesToListsRegex = $default;
     }
 }
