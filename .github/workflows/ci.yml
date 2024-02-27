@@ -36,12 +36,8 @@ jobs:
           key: composer-cache-${{ runner.os }}-${{ hashFiles('**/composer.json', '**/composer.lock') }}
           restore-keys: composer-cache-${{ runner.os }}-
 
-      - name: Install pretty-php
-        working-directory: tools/pretty-php
-        run: composer install --no-interaction --no-progress --no-dev
-
       - name: Run pretty-php
-        run: tools/pretty-php/vendor/bin/pretty-php --diff
+        run: tools/pretty-php --diff
 
   phpstan:
     name: PHPStan

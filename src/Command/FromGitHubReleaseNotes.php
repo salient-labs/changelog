@@ -2,22 +2,22 @@
 
 namespace Salient\Changelog\Command;
 
-use Lkrms\Cli\Catalog\CliOptionType as OptionType;
-use Lkrms\Cli\Catalog\CliOptionValueType as ValueType;
-use Lkrms\Cli\Exception\CliInvalidArgumentsException;
-use Lkrms\Cli\CliCommand;
-use Lkrms\Cli\CliOption as Option;
-use Lkrms\Console\Catalog\ConsoleLevel as Level;
-use Lkrms\Console\Catalog\ConsoleMessageType as MessageType;
-use Lkrms\Curler\Curler;
-use Lkrms\Facade\Console;
-use Lkrms\Http\OAuth2\AccessToken;
-use Lkrms\Http\HttpHeaders;
-use Lkrms\Utility\Env;
-use Lkrms\Utility\File;
-use Lkrms\Utility\Inflect;
-use Lkrms\Utility\Pcre;
-use Lkrms\Utility\Str;
+use Salient\Cli\Catalog\CliOptionType as OptionType;
+use Salient\Cli\Catalog\CliOptionValueType as ValueType;
+use Salient\Cli\Exception\CliInvalidArgumentsException;
+use Salient\Cli\CliCommand;
+use Salient\Cli\CliOption as Option;
+use Salient\Console\Catalog\ConsoleLevel as Level;
+use Salient\Console\Catalog\ConsoleMessageType as MessageType;
+use Salient\Core\Facade\Console;
+use Salient\Core\Utility\Env;
+use Salient\Core\Utility\File;
+use Salient\Core\Utility\Inflect;
+use Salient\Core\Utility\Pcre;
+use Salient\Core\Utility\Str;
+use Salient\Curler\Curler;
+use Salient\Http\OAuth2\AccessToken;
+use Salient\Http\HttpHeaders;
 use DateTimeImmutable;
 use ReflectionParameter;
 
@@ -330,8 +330,8 @@ EOF;
                 ->flush($this->Flush)
                 ->getAllLinked();
             $this->Quiet || Console::log(Inflect::format(
+                $releases,
                 '{{#}} {{#:release}} found',
-                count($releases),
             ));
 
             $prevTag = null;
@@ -387,7 +387,7 @@ EOF;
             }
             fprintf($fp, "%s{$eol}{$eol}", $input);
         } else {
-            $fp = \STDOUT;
+            $fp = File::open('php://output', '');
         }
 
         $releaseUrls = [];
@@ -497,9 +497,7 @@ EOF;
             }
         }
 
-        if ($this->OutputFile !== null) {
-            fclose($fp);
-        }
+        File::close($fp);
     }
 
     private function includeTag(string $tag, bool $checkFromTag = true): bool
