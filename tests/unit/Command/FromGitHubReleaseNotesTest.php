@@ -9,6 +9,7 @@ use Salient\Console\Target\MockTarget;
 use Salient\Contract\Core\MessageLevel as Level;
 use Salient\Contract\Core\MessageLevelGroup as LevelGroup;
 use Salient\Core\Facade\Console;
+use Salient\Core\Utility\Env;
 use Salient\Core\Utility\File;
 
 final class FromGitHubReleaseNotesTest extends TestCase
@@ -103,6 +104,9 @@ EOF,
                 [],
                 false,
                 [
+                    ...(Env::has('GITHUB_TOKEN')
+                        ? [[Level::INFO, ' // GITHUB_TOKEN value applied from environment to GitHub API requests']]
+                        : []),
                     [Level::NOTICE, '==> Retrieving releases from https://api.github.com/repos/salient-labs/changelog/releases'],
                     [Level::INFO, ' -> %d releases found'],
                 ]
