@@ -17,7 +17,7 @@
                 "/^bin\\//",
                 "/^salient\\/toolkit\\/(?:bin|src\\/(?:Sli|Toolkit\\/(?:Contract\\/)?(?:Db|PHPStan|Sync)))\\//",
                 "/^lkrms\\/dice\\/src\\/Loader\\//",
-                "/^psr\\/(?:http-(?:client|factory|message)|log\\/Psr\\/Log\\/Test)\\//"
+                "/^psr\\/log\\/Psr\\/Log\\/Test\\//"
             ]
         }
     ],
