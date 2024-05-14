@@ -1,21 +1,21 @@
 # salient/changelog
 
+> Generates changelogs based on [Keep a Changelog][] from GitHub release notes,
+> merging and de-duplicating entries from multiple repositories if needed.
+
 <p>
   <a href="https://packagist.org/packages/salient/changelog"><img src="https://poser.pugx.org/salient/changelog/v" alt="Latest Stable Version" /></a>
   <a href="https://packagist.org/packages/salient/changelog"><img src="https://poser.pugx.org/salient/changelog/license" alt="License" /></a>
-  <a href="https://github.com/salient-labs/php-changelog/actions"><img src="https://github.com/salient-labs/php-changelog/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
-  <a href="https://codecov.io/gh/salient-labs/php-changelog"><img src="https://codecov.io/gh/salient-labs/php-changelog/graph/badge.svg?token=ayuRwrUY24" alt="Code Coverage" /></a>
+  <a href="https://github.com/salient-labs/changelog/actions"><img src="https://github.com/salient-labs/changelog/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
+  <a href="https://codecov.io/gh/salient-labs/changelog"><img src="https://codecov.io/gh/salient-labs/changelog/graph/badge.svg?token=ayuRwrUY24" alt="Code Coverage" /></a>
 </p>
-
-Generates changelogs based on [Keep a Changelog][] from GitHub release notes,
-merging and de-duplicating entries from multiple repositories if necessary.
 
 ## Installation
 
 `changelog` is distributed as a PHP archive you can download and run:
 
 ```shell
-wget -O changelog.phar https://github.com/salient-labs/php-changelog/releases/latest/download/changelog.phar
+wget -O changelog.phar https://github.com/salient-labs/changelog/releases/latest/download/changelog.phar
 ```
 
 ```shell
@@ -25,7 +25,7 @@ php changelog.phar --version
 Installation with [PHIVE][] is also supported:
 
 ```shell
-phive install salient-labs/php-changelog
+phive install salient-labs/changelog
 ```
 
 ```shell
@@ -48,19 +48,19 @@ For detailed usage information, see [usage](docs/Usage.md) or run:
 Generate a changelog for every release in a repository:
 
 ```shell
-./tools/changelog lkrms/php-util
+./tools/changelog salient-labs/toolkit
 ```
 
 Generate a changelog for releases that match a regular expression:
 
 ```shell
-./tools/changelog --include '/^v0\.20\./' lkrms/php-util
+./tools/changelog --include '/^v0\.20\./' salient-labs/toolkit
 ```
 
 Generate a changelog for releases between two tags:
 
 ```shell
-./tools/changelog --from v0.20.55 --to v0.20.56 lkrms/php-util
+./tools/changelog --from v0.20.55 --to v0.20.56 salient-labs/toolkit
 ```
 
 ```
@@ -80,8 +80,8 @@ Generate a changelog for releases between two tags:
 
 - Add `Str::setEol()` and standardise `getEol()` methods
 
-[v0.20.56]: https://github.com/lkrms/php-util/compare/v0.20.55...v0.20.56
-[v0.20.55]: https://github.com/lkrms/php-util/releases/tag/v0.20.55
+[v0.20.56]: https://github.com/salient-labs/toolkit/compare/v0.20.55...v0.20.56
+[v0.20.55]: https://github.com/salient-labs/toolkit/releases/tag/v0.20.55
 ```
 
 Merge release notes from two repositories into one list of changes per release,

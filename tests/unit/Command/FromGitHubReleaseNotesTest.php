@@ -5,9 +5,9 @@ namespace Salient\Changelog\Tests\Command;
 use PHPUnit\Framework\TestCase;
 use Salient\Changelog\Command\FromGitHubReleaseNotes;
 use Salient\Cli\CliApplication;
-use Salient\Console\Catalog\ConsoleLevel as Level;
-use Salient\Console\Catalog\ConsoleLevelGroup as LevelGroup;
 use Salient\Console\Target\MockTarget;
+use Salient\Contract\Core\MessageLevel as Level;
+use Salient\Contract\Core\MessageLevelGroup as LevelGroup;
 use Salient\Core\Facade\Console;
 use Salient\Core\Utility\File;
 
@@ -18,7 +18,6 @@ final class FromGitHubReleaseNotesTest extends TestCase
      *
      * @param string[] $args
      * @param string[] $name
-     * @param bool $outputIncludesConsoleMessages
      * @param array<array{Level::*,string}>|null $consoleMessages
      */
     public function testRun(
@@ -58,7 +57,7 @@ final class FromGitHubReleaseNotesTest extends TestCase
         } finally {
             $app->unload();
 
-            File::deleteDir($basePath, true);
+            File::pruneDir($basePath, true);
 
             Console::deregisterTarget($target);
             Console::unload();
@@ -93,18 +92,18 @@ final class FromGitHubReleaseNotesTest extends TestCase
 
 **Full Changelog**: https://github.com/salient-labs/php-changelog/compare/v0.1.1...v0.1.2
 
-[v0.1.5]: https://github.com/salient-labs/php-changelog/compare/v0.1.4...v0.1.5
-[v0.1.4]: https://github.com/salient-labs/php-changelog/compare/v0.1.3...v0.1.4
-[v0.1.3]: https://github.com/salient-labs/php-changelog/compare/v0.1.2...v0.1.3
-[v0.1.2]: https://github.com/salient-labs/php-changelog/releases/tag/v0.1.2
+[v0.1.5]: https://github.com/salient-labs/changelog/compare/v0.1.4...v0.1.5
+[v0.1.4]: https://github.com/salient-labs/changelog/compare/v0.1.3...v0.1.4
+[v0.1.3]: https://github.com/salient-labs/changelog/compare/v0.1.2...v0.1.3
+[v0.1.2]: https://github.com/salient-labs/changelog/releases/tag/v0.1.2
 
 EOF,
                 0,
-                ['--to', 'v0.1.5', 'salient-labs/php-changelog'],
+                ['--to', 'v0.1.5', 'salient-labs/changelog'],
                 [],
                 false,
                 [
-                    [Level::NOTICE, '==> Retrieving releases from https://api.github.com/repos/salient-labs/php-changelog/releases'],
+                    [Level::NOTICE, '==> Retrieving releases from https://api.github.com/repos/salient-labs/changelog/releases'],
                     [Level::INFO, ' -> %d releases found'],
                 ]
             ],

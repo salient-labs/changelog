@@ -2,63 +2,43 @@
 
 namespace Salient\Changelog\Command;
 
-use Salient\Cli\Catalog\CliOptionType as OptionType;
-use Salient\Cli\Catalog\CliOptionValueType as ValueType;
 use Salient\Cli\Exception\CliInvalidArgumentsException;
 use Salient\Cli\CliCommand;
 use Salient\Cli\CliOption as Option;
-use Salient\Console\Catalog\ConsoleLevel as Level;
-use Salient\Console\Catalog\ConsoleMessageType as MessageType;
+use Salient\Contract\Cli\CliOptionType as OptionType;
+use Salient\Contract\Cli\CliOptionValueType as ValueType;
+use Salient\Contract\Console\ConsoleMessageType as MessageType;
+use Salient\Contract\Core\MessageLevel as Level;
 use Salient\Core\Facade\Console;
 use Salient\Core\Utility\Env;
 use Salient\Core\Utility\File;
 use Salient\Core\Utility\Inflect;
 use Salient\Core\Utility\Pcre;
 use Salient\Core\Utility\Str;
-use Salient\Curler\Curler;
+use Salient\Curler\Pager\LinkPager;
+use Salient\Curler\CurlerBuilder;
 use Salient\Http\OAuth2\AccessToken;
-use Salient\Http\HttpHeaders;
 use DateTimeImmutable;
 use ReflectionParameter;
 
 final class FromGitHubReleaseNotes extends CliCommand
 {
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private array $Repos = [];
-
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private array $Names = [];
-
-    /**
-     * @var bool[]
-     */
+    /** @var bool[] */
     private array $RepoReleases = [];
-
-    /**
-     * @var bool[]
-     */
+    /** @var bool[] */
     private array $RepoReportMissing = [];
-
     private ?string $IncludeRegex = null;
-
     private ?string $ExcludeRegex = null;
-
     private ?string $FromTag = null;
-
     private ?string $ToTag = null;
-
     private string $Headings = '';
-
     private bool $Merge = false;
-
     private ?string $OutputFile = null;
-
     private bool $Flush = false;
-
     private bool $Quiet = false;
 
     // --
@@ -268,11 +248,9 @@ EOF;
             }
         }
 
-        $headers = new HttpHeaders();
         $token = Env::getNullable('GITHUB_TOKEN', null);
         if ($token !== null) {
             $token = new AccessToken($token, 'Bearer', null);
-            $headers = $headers->authorize($token);
             Console::message(
                 Level::INFO,
                 'GITHUB_TOKEN value applied from environment to GitHub API requests',
@@ -321,21 +299,20 @@ EOF;
             $repoUrls[$i] = sprintf('https://github.com/%s/%s', $owner, $repo);
 
             $this->Quiet || Console::info('Retrieving releases from', $url);
-            /** @var array<array{tag_name:string,created_at:string,body?:string|null}> */
-            $releases = Curler::build()
-                ->baseUrl("$url?per_page=100")
-                ->headers($headers)
-                ->cacheResponse()
-                ->expiry(600)
-                ->flush($this->Flush)
-                ->getAllLinked();
-            $this->Quiet || Console::log(Inflect::format(
-                $releases,
-                '{{#}} {{#:release}} found',
-            ));
+            /** @var iterable<array{tag_name:string,created_at:string,body?:string|null}> */
+            $releases = CurlerBuilder::build()
+                ->uri($url)
+                ->accessToken($token)
+                ->cacheResponses()
+                ->cacheLifetime(600)
+                ->refreshCache($this->Flush)
+                ->pager(new LinkPager(100))
+                ->getP();
 
+            $releaseCount = 0;
             $prevTag = null;
             foreach ($releases as $release) {
+                $releaseCount++;
                 $tag = $release['tag_name'];
                 if (isset($this->RepoReleases[$i]) || isset($releaseNotes[$tag])) {
                     $releaseNotes[$tag][$i] = Str::coalesce(trim($release['body'] ?? ''), null);
@@ -349,6 +326,11 @@ EOF;
                 }
                 $prevTag = $tag;
             }
+
+            $this->Quiet || Console::log(Inflect::format(
+                $releaseCount,
+                '{{#}} {{#:release}} found',
+            ));
         }
 
         // Sort notes by tag, in descending order
@@ -380,7 +362,7 @@ It is generated from the GitHub release notes of the project by
 The format is based on [Keep a Changelog][], and this project adheres to
 [Semantic Versioning][].
 
-[salient/changelog]: https://github.com/salient-labs/php-changelog
+[salient/changelog]: https://github.com/salient-labs/changelog
 [Keep a Changelog]: https://keepachangelog.com/en/1.1.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
 EOF;
