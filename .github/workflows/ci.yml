@@ -72,7 +72,7 @@ jobs:
           key: composer-cache-${{ runner.os }}-${{ hashFiles('**/composer.json', '**/composer.lock') }}
           restore-keys: composer-cache-${{ runner.os }}-
 
-      - name: Install dependencies
+      - name: Install PHP dependencies
         run: composer install --no-interaction --no-progress
 
       - name: Run PHPStan
@@ -127,7 +127,7 @@ jobs:
           key: composer-cache-${{ runner.os }}-${{ hashFiles('**/composer.json', '**/composer.lock') }}
           restore-keys: composer-cache-${{ runner.os }}-
 
-      - name: Install dependencies
+      - name: Install PHP dependencies
         run: composer install --no-interaction --no-progress
 
       - name: Run PHPUnit tests and generate code coverage report
@@ -139,3 +139,98 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+  build:
+    name: Build phar
+    needs:
+      - phpstan
+      - unit-tests
+    runs-on: ubuntu-latest
+    outputs:
+      artifact_name: ${{ steps.run-build-script.outputs.artifact_name }}
+      artifact_path: ${{ steps.run-build-script.outputs.artifact_path }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP and Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: get-composer-cache
+        shell: bash
+        run: printf 'cache_dir=%s\n' "$(composer config cache-files-dir)" >>"$GITHUB_OUTPUT"
+
+      - name: Cache PHP dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.get-composer-cache.outputs.cache_dir }}
+          key: composer-cache-${{ runner.os }}-${{ hashFiles('**/composer.json', '**/composer.lock') }}
+          restore-keys: composer-cache-${{ runner.os }}-
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --no-progress
+
+      - name: Run build script
+        id: run-build-script
+        run: |
+          scripts/build.sh
+          cd build/dist
+          { printf 'artifact_name=%s-snapshot-phar\n' "${GITHUB_REPOSITORY##*/}" &&
+            printf 'artifact_path=%s\n' *.phar | head -n1; } | tee -a "$GITHUB_OUTPUT" >>"$GITHUB_ENV"
+
+      - name: Upload phar artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.artifact_name }}
+          path: build/dist/${{ env.artifact_path }}
+
+  test-phar:
+    name: Test phar
+    needs:
+      - build
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+        php-version:
+          - "8.3"
+        include:
+          - os: ubuntu-latest
+            php-version: "8.2"
+          - os: ubuntu-latest
+            php-version: "8.1"
+          - os: ubuntu-latest
+            php-version: "8.0"
+          - os: ubuntu-latest
+            php-version: "7.4"
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: sqlite3
+          coverage: none
+
+      - name: Download phar artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.artifact_name }}
+
+      - name: Run changelog
+        shell: bash
+        run: php "$artifact_path" "$GITHUB_REPOSITORY"
+        env:
+          artifact_path: ${{ needs.build.outputs.artifact_path }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
