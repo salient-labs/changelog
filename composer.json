@@ -1,28 +1,27 @@
 {
     "name": "salient/changelog",
-    "description": "Changelog generator",
+    "description": "Generates changelogs from GitHub release notes, merging and de-duplicating entries from multiple repositories if needed",
     "license": "MIT",
-    "support": {
-        "issues": "https://github.com/salient-labs/php-changelog/issues",
-        "source": "https://github.com/salient-labs/php-changelog"
-    },
     "authors": [
         {
             "name": "Luke Arms",
             "email": "luke@linacreative.com"
         }
     ],
-    "bin": [
-        "bin/changelog"
-    ],
+    "support": {
+        "issues": "https://github.com/salient-labs/changelog/issues",
+        "source": "https://github.com/salient-labs/changelog"
+    },
     "require": {
         "php": ">=7.4",
-        "salient/toolkit": "^0.99.0"
+        "salient/toolkit": "^0.99.20"
     },
     "require-dev": {
+        "ergebnis/composer-normalize": "^2",
         "phpstan/extension-installer": "^1",
         "phpstan/phpstan": "^1",
         "phpstan/phpstan-deprecation-rules": "^1",
+        "phpstan/phpstan-phpunit": "^1",
         "phpunit/phpunit": "^9"
     },
     "autoload": {
@@ -35,13 +34,17 @@
             "Salient\\Changelog\\Tests\\": "tests/unit/"
         }
     },
+    "bin": [
+        "bin/changelog"
+    ],
     "config": {
         "allow-plugins": {
+            "ergebnis/composer-normalize": true,
             "phpstan/extension-installer": true
         },
-        "sort-packages": true,
         "platform": {
             "php": "7.4.33"
-        }
+        },
+        "sort-packages": true
     }
 }
