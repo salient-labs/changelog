@@ -6,14 +6,20 @@ use PHPUnit\Framework\TestCase;
 use Salient\Changelog\Command\FromGitHubReleaseNotes;
 use Salient\Cli\CliApplication;
 use Salient\Console\Target\MockTarget;
+use Salient\Console\ConsoleFormatter;
+use Salient\Contract\Console\ConsoleMessageType as MessageType;
 use Salient\Contract\Core\MessageLevel as Level;
 use Salient\Contract\Core\MessageLevelGroup as LevelGroup;
 use Salient\Core\Facade\Console;
-use Salient\Core\Utility\Env;
-use Salient\Core\Utility\File;
+use Salient\Utility\Env;
+use Salient\Utility\File;
 
 final class FromGitHubReleaseNotesTest extends TestCase
 {
+    private const NOTICE = ConsoleFormatter::DEFAULT_LEVEL_PREFIX_MAP[Level::NOTICE];
+    private const INFO = ConsoleFormatter::DEFAULT_LEVEL_PREFIX_MAP[Level::INFO];
+    private const SUCCESS = ConsoleFormatter::DEFAULT_TYPE_PREFIX_MAP[MessageType::SUCCESS];
+
     /**
      * @dataProvider runProvider
      *
@@ -105,10 +111,10 @@ EOF,
                 false,
                 [
                     ...(Env::has('GITHUB_TOKEN')
-                        ? [[Level::INFO, ' // GITHUB_TOKEN value applied from environment to GitHub API requests']]
+                        ? [[Level::INFO, self::SUCCESS . 'GITHUB_TOKEN value applied from environment to GitHub API requests']]
                         : []),
-                    [Level::NOTICE, '==> Retrieving releases from https://api.github.com/repos/salient-labs/changelog/releases'],
-                    [Level::INFO, ' -> %d releases found'],
+                    [Level::NOTICE, self::NOTICE . 'Retrieving releases from https://api.github.com/repos/salient-labs/changelog/releases'],
+                    [Level::INFO, self::INFO . '%d releases found'],
                 ]
             ],
         ];

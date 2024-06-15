@@ -10,14 +10,14 @@ use Salient\Contract\Cli\CliOptionValueType as ValueType;
 use Salient\Contract\Console\ConsoleMessageType as MessageType;
 use Salient\Contract\Core\MessageLevel as Level;
 use Salient\Core\Facade\Console;
-use Salient\Core\Utility\Env;
-use Salient\Core\Utility\File;
-use Salient\Core\Utility\Inflect;
-use Salient\Core\Utility\Pcre;
-use Salient\Core\Utility\Str;
 use Salient\Curler\Pager\LinkPager;
-use Salient\Curler\CurlerBuilder;
+use Salient\Curler\Curler;
 use Salient\Http\OAuth2\AccessToken;
+use Salient\Utility\Env;
+use Salient\Utility\File;
+use Salient\Utility\Inflect;
+use Salient\Utility\Regex;
+use Salient\Utility\Str;
 use DateTimeImmutable;
 use ReflectionParameter;
 
@@ -289,7 +289,7 @@ EOF;
 
         // Populate the arrays above
         foreach ($this->Repos as $i => $repo) {
-            if (!Pcre::match('%^(?P<owner>[^/]+)/(?P<repo>[^/]+)$%', $repo, $matches)) {
+            if (!Regex::match('%^(?P<owner>[^/]+)/(?P<repo>[^/]+)$%', $repo, $matches)) {
                 throw new CliInvalidArgumentsException(sprintf('invalid repo: %s', $repo));
             }
 
@@ -300,7 +300,7 @@ EOF;
 
             $this->Quiet || Console::info('Retrieving releases from', $url);
             /** @var iterable<array{tag_name:string,created_at:string,body?:string|null}> */
-            $releases = CurlerBuilder::build()
+            $releases = Curler::build()
                 ->uri($url)
                 ->accessToken($token)
                 ->cacheResponses()
@@ -435,7 +435,7 @@ EOF;
                 $blocks[] =
                     $repoCount < 2
                         ? $note
-                        : Pcre::replace('/^#{3,5}(?= )/m', '#$0', $note);
+                        : Regex::replace('/^#{3,5}(?= )/m', '#$0', $note);
 
                 $lastNoteRepo = $i;
             }
@@ -484,10 +484,10 @@ EOF;
 
     private function includeTag(string $tag, bool $checkFromTag = true): bool
     {
-        if ($this->ExcludeRegex !== null && Pcre::match($this->ExcludeRegex, $tag)) {
+        if ($this->ExcludeRegex !== null && Regex::match($this->ExcludeRegex, $tag)) {
             return false;
         }
-        if ($this->IncludeRegex !== null && !Pcre::match($this->IncludeRegex, $tag)) {
+        if ($this->IncludeRegex !== null && !Regex::match($this->IncludeRegex, $tag)) {
             return false;
         }
         if ($checkFromTag && $this->FromTag !== null && version_compare($tag, $this->FromTag) < 0) {
