@@ -14,7 +14,7 @@
     },
     "require": {
         "php": ">=7.4",
-        "salient/toolkit": "^0.99.20"
+        "salient/toolkit": "^0.99.28"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2",
