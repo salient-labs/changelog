@@ -14,7 +14,13 @@
     },
     "require": {
         "php": ">=7.4",
-        "salient/toolkit": "^0.99.28"
+        "salient/cache": "^0.99",
+        "salient/cli": "^0.99",
+        "salient/console": "^0.99",
+        "salient/core": "^0.99",
+        "salient/curler": "^0.99",
+        "salient/http": "^0.99",
+        "salient/utils": "^0.99"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2",
@@ -22,7 +28,10 @@
         "phpstan/phpstan": "^1",
         "phpstan/phpstan-deprecation-rules": "^1",
         "phpstan/phpstan-phpunit": "^1",
-        "phpunit/phpunit": "^9"
+        "phpunit/phpunit": "^9",
+        "salient/phpstan": "^0.99",
+        "salient/sli": "^0.99",
+        "salient/testing": "^0.99"
     },
     "autoload": {
         "psr-4": {

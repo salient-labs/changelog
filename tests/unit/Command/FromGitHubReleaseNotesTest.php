@@ -5,12 +5,12 @@ namespace Salient\Changelog\Tests\Command;
 use PHPUnit\Framework\TestCase;
 use Salient\Changelog\Command\FromGitHubReleaseNotes;
 use Salient\Cli\CliApplication;
-use Salient\Console\Target\MockTarget;
 use Salient\Console\ConsoleFormatter;
 use Salient\Contract\Console\ConsoleMessageType as MessageType;
 use Salient\Contract\Core\MessageLevel as Level;
 use Salient\Contract\Core\MessageLevelGroup as LevelGroup;
 use Salient\Core\Facade\Console;
+use Salient\Testing\Console\MockTarget;
 use Salient\Utility\Env;
 use Salient\Utility\File;
 
@@ -115,7 +115,7 @@ EOF,
                         : []),
                     [Level::NOTICE, self::NOTICE . 'Retrieving releases from https://api.github.com/repos/salient-labs/changelog/releases'],
                     [Level::INFO, self::INFO . '%d releases found'],
-                ]
+                ],
             ],
         ];
     }

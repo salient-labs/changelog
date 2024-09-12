@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19867860b71030af8cd20bc2290c888a",
+    "content-hash": "6d9383d65372c4b1612e32b5d5aeeee9",
     "packages": [
         {
             "name": "lkrms/dice",
@@ -414,86 +414,269 @@
             "time": "2017-10-23T01:57:42+00:00"
         },
         {
-            "name": "salient/toolkit",
-            "version": "v0.99.28",
+            "name": "salient/cache",
+            "version": "v0.99.50",
             "source": {
                 "type": "git",
-                "url": "https://github.com/salient-labs/toolkit.git",
-                "reference": "4129e84cc75b48ea0cd8c959a907c7c6d976f330"
+                "url": "https://github.com/salient-labs/toolkit-cache.git",
+                "reference": "0c5e7858530513dd8e841ec8af901d3827369e38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit/zipball/4129e84cc75b48ea0cd8c959a907c7c6d976f330",
-                "reference": "4129e84cc75b48ea0cd8c959a907c7c6d976f330",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-cache/zipball/0c5e7858530513dd8e841ec8af901d3827369e38",
+                "reference": "0c5e7858530513dd8e841ec8af901d3827369e38",
                 "shasum": ""
             },
             "require": {
-                "composer-runtime-api": "^2.2",
+                "php": ">=7.4",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version"
+            },
+            "provide": {
+                "psr/simple-cache-implementation": "^1 || ^2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Cache\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The cache package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-11T05:42:01+00:00"
+        },
+        {
+            "name": "salient/cli",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-cli.git",
+                "reference": "7c793db32a4ad46206c60f515dba0198dbbb499e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-cli/zipball/7c793db32a4ad46206c60f515dba0198dbbb499e",
+                "reference": "7c793db32a4ad46206c60f515dba0198dbbb499e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "salient/console": "self.version",
+                "salient/container": "self.version",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/utils": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Cli\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The cli package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-08-31T11:58:24+00:00"
+        },
+        {
+            "name": "salient/collections",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-collections.git",
+                "reference": "db64efb063e5d1c9352725c41c797332b3f2ec4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-collections/zipball/db64efb063e5d1c9352725c41c797332b3f2ec4f",
+                "reference": "db64efb063e5d1c9352725c41c797332b3f2ec4f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/utils": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Collection\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The collections package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-08-05T01:36:42+00:00"
+        },
+        {
+            "name": "salient/console",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-console.git",
+                "reference": "4337cbfb3c6f965beab147052d842b1934635504"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-console/zipball/4337cbfb3c6f965beab147052d842b1934635504",
+                "reference": "4337cbfb3c6f965beab147052d842b1934635504",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "psr/log": "^1",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/utils": "self.version"
+            },
+            "provide": {
+                "psr/log-implementation": "^1"
+            },
+            "suggest": {
+                "analog/analog": "Required by AnalogTarget"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The console package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-10T03:19:13+00:00"
+        },
+        {
+            "name": "salient/container",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-container.git",
+                "reference": "e8ecd81e764fac096b4d7e9a0ec927f6e5574dcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-container/zipball/e8ecd81e764fac096b4d7e9a0ec927f6e5574dcc",
+                "reference": "e8ecd81e764fac096b4d7e9a0ec927f6e5574dcc",
+                "shasum": ""
+            },
+            "require": {
                 "lkrms/dice": "^4.1.10",
+                "php": ">=7.4",
+                "psr/container": "^2",
+                "salient/console": "self.version",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/utils": "self.version"
+            },
+            "provide": {
+                "psr/container-implementation": "^2"
+            },
+            "suggest": {
+                "salient/cache": "Required by Application::startCache()",
+                "salient/curler": "Required by Application::exportHar()",
+                "salient/sync": "Required by Application::startSync()"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Container\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The container package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-11T05:42:01+00:00"
+        },
+        {
+            "name": "salient/contracts",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-contracts.git",
+                "reference": "8946d28ebe0be0dbe9f7bce98915069302987e53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-contracts/zipball/8946d28ebe0be0dbe9f7bce98915069302987e53",
+                "reference": "8946d28ebe0be0dbe9f7bce98915069302987e53",
+                "shasum": ""
+            },
+            "require": {
                 "php": ">=7.4",
                 "psr/container": "^2",
                 "psr/event-dispatcher": "^1",
                 "psr/http-client": "^1",
-                "psr/http-factory": "^1",
                 "psr/http-message": "^1.1 || ^2",
                 "psr/log": "^1",
-                "psr/simple-cache": "^1 || ^2 || ^3"
+                "psr/simple-cache": "^1 || ^2"
             },
-            "conflict": {
-                "lkrms/util": "*"
-            },
-            "provide": {
-                "psr/event-dispatcher-implementation": "^1",
-                "psr/http-factory-implementation": "^1",
-                "psr/http-message-implementation": "^1.1 || ^2",
-                "psr/log-implementation": "^1",
-                "psr/simple-cache-implementation": "^1 || ^2 || ^3"
-            },
-            "replace": {
-                "salient/cache": "self.version",
-                "salient/contracts": "self.version",
-                "salient/core": "self.version"
-            },
-            "require-dev": {
-                "adodb/adodb-php": "^5",
-                "analog/analog": "^1",
-                "ergebnis/phpunit-slow-test-detector": "^2",
-                "firebase/php-jwt": "^6",
-                "league/oauth2-client": "^2",
-                "mikey179/vfsstream": "^1",
-                "nikic/php-parser": "^4",
-                "php-http/psr7-integration-tests": "^1.3",
-                "phpstan/extension-installer": "^1",
-                "phpstan/phpdoc-parser": "^1",
-                "phpstan/phpstan": "^1.11",
-                "phpstan/phpstan-deprecation-rules": "^1",
-                "phpstan/phpstan-phpunit": "^1",
-                "phpunit/phpunit": "^9",
-                "sebastian/diff": "^4 || ^5"
-            },
-            "suggest": {
-                "adodb/adodb-php": "Required for access to databases",
-                "analog/analog": "Allows Analog handlers to be used as console message targets",
-                "firebase/php-jwt": "Required for validation of OAuth 2.0 access tokens",
-                "league/oauth2-client": "Required for integration with OAuth 2.0 service providers"
-            },
-            "bin": [
-                "bin/sli"
-            ],
             "type": "library",
-            "extra": {
-                "phpstan": {
-                    "includes": [
-                        "phpstan.extension.neon"
-                    ]
-                }
-            },
             "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
                 "psr-4": {
-                    "Salient\\": "src/Toolkit/"
+                    "Salient\\Contract\\": ""
                 },
                 "classmap": [
                     "stubs/"
@@ -509,12 +692,253 @@
                     "email": "luke@linacreative.com"
                 }
             ],
-            "description": "A lightweight PHP toolkit for expressive backend/CLI apps",
+            "description": "The contracts package of the Salient toolkit",
             "support": {
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-06-15T08:17:13+00:00"
+            "time": "2024-09-11T05:42:01+00:00"
+        },
+        {
+            "name": "salient/core",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-core.git",
+                "reference": "f988baaa72fcb7f576986699180694306d6ce975"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-core/zipball/f988baaa72fcb7f576986699180694306d6ce975",
+                "reference": "f988baaa72fcb7f576986699180694306d6ce975",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "psr/event-dispatcher": "^1",
+                "salient/container": "self.version",
+                "salient/contracts": "self.version",
+                "salient/iterators": "self.version",
+                "salient/utils": "self.version"
+            },
+            "provide": {
+                "psr/event-dispatcher-implementation": "^1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Core\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The core package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-11T05:42:01+00:00"
+        },
+        {
+            "name": "salient/curler",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-curler.git",
+                "reference": "ea400c08d5f65942770e2b95d9538e7455849955"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-curler/zipball/ea400c08d5f65942770e2b95d9538e7455849955",
+                "reference": "ea400c08d5f65942770e2b95d9538e7455849955",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "psr/http-client": "^1",
+                "psr/http-message": "^1.1 || ^2",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/http": "self.version",
+                "salient/utils": "self.version"
+            },
+            "provide": {
+                "psr/http-client-implementation": "^1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Curler\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The curler package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-11T05:42:01+00:00"
+        },
+        {
+            "name": "salient/http",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-http.git",
+                "reference": "49b7b8382d0b7c8c08910315cc234d8d3096c100"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-http/zipball/49b7b8382d0b7c8c08910315cc234d8d3096c100",
+                "reference": "49b7b8382d0b7c8c08910315cc234d8d3096c100",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "psr/http-factory": "^1",
+                "psr/http-message": "^1.1 || ^2",
+                "salient/collections": "self.version",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/utils": "self.version"
+            },
+            "provide": {
+                "psr/http-factory-implementation": "^1",
+                "psr/http-message-implementation": "^1.1 || ^2"
+            },
+            "suggest": {
+                "firebase/php-jwt": "Required by OAuth2Client",
+                "league/oauth2-client": "Required by OAuth2Client",
+                "salient/curler": "Required by OAuth2Client"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Http\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The http package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-11T05:38:44+00:00"
+        },
+        {
+            "name": "salient/iterators",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-iterators.git",
+                "reference": "fb99faad223beeaa7ab0b43b24cd77ee60302244"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-iterators/zipball/fb99faad223beeaa7ab0b43b24cd77ee60302244",
+                "reference": "fb99faad223beeaa7ab0b43b24cd77ee60302244",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "salient/contracts": "self.version",
+                "salient/utils": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Iterator\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The iterators package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-08-13T06:46:57+00:00"
+        },
+        {
+            "name": "salient/utils",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-utils.git",
+                "reference": "2bacf2647e6cc86969df1038cfcc6890f91ef64d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-utils/zipball/2bacf2647e6cc86969df1038cfcc6890f91ef64d",
+                "reference": "2bacf2647e6cc86969df1038cfcc6890f91ef64d",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2.2",
+                "php": ">=7.4"
+            },
+            "suggest": {
+                "salient/iterators": "Required by File::find() and File::pruneDir()"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Utility\\": ""
+                },
+                "classmap": [
+                    "stubs/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The utils package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-06T01:25:54+00:00"
         }
     ],
     "packages-dev": [
@@ -590,16 +1014,16 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.42.0",
+            "version": "2.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "02cf2b69ad2a74c6f11a8c3f5f054b8f949df910"
+                "reference": "4b46330c84bb8f43fac79f5c5a05162fc7c80d75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/02cf2b69ad2a74c6f11a8c3f5f054b8f949df910",
-                "reference": "02cf2b69ad2a74c6f11a8c3f5f054b8f949df910",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/4b46330c84bb8f43fac79f5c5a05162fc7c80d75",
+                "reference": "4b46330c84bb8f43fac79f5c5a05162fc7c80d75",
                 "shasum": ""
             },
             "require": {
@@ -613,17 +1037,17 @@
                 "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "require-dev": {
-                "composer/composer": "^2.6.6",
+                "composer/composer": "^2.7.7",
                 "ergebnis/license": "^2.4.0",
-                "ergebnis/php-cs-fixer-config": "^6.20.0",
-                "ergebnis/phpunit-slow-test-detector": "^2.9.0",
+                "ergebnis/php-cs-fixer-config": "^6.30.1",
+                "ergebnis/phpunit-slow-test-detector": "^2.14.0",
                 "fakerphp/faker": "^1.23.1",
                 "infection/infection": "~0.26.6",
-                "phpunit/phpunit": "^9.6.16",
-                "psalm/plugin-phpunit": "~0.18.4",
-                "rector/rector": "~0.19.2",
-                "symfony/filesystem": "^5.4.25",
-                "vimeo/psalm": "^5.20.0"
+                "phpunit/phpunit": "^9.6.19",
+                "psalm/plugin-phpunit": "~0.19.0",
+                "rector/rector": "^1.1.0",
+                "symfony/filesystem": "^5.4.40",
+                "vimeo/psalm": "^5.24.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -663,7 +1087,7 @@
                 "security": "https://github.com/ergebnis/composer-normalize/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/composer-normalize"
             },
-            "time": "2024-01-30T11:54:02+00:00"
+            "time": "2024-06-16T13:22:18+00:00"
         },
         {
             "name": "ergebnis/json",
@@ -999,20 +1423,20 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "v5.2.13",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsonrainbow/json-schema.git",
-                "reference": "fbbe7e5d79f618997bc3332a6f49246036c45793"
+                "reference": "feb2ca6dd1cebdaf1ed60a4c8de2e53ce11c4fd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/fbbe7e5d79f618997bc3332a6f49246036c45793",
-                "reference": "fbbe7e5d79f618997bc3332a6f49246036c45793",
+                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/feb2ca6dd1cebdaf1ed60a4c8de2e53ce11c4fd8",
+                "reference": "feb2ca6dd1cebdaf1ed60a4c8de2e53ce11c4fd8",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=7.1"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "~2.2.20||~2.15.1",
@@ -1023,11 +1447,6 @@
                 "bin/validate-json"
             ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "JsonSchema\\": "src/JsonSchema/"
@@ -1063,9 +1482,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jsonrainbow/json-schema/issues",
-                "source": "https://github.com/jsonrainbow/json-schema/tree/v5.2.13"
+                "source": "https://github.com/jsonrainbow/json-schema/tree/5.3.0"
             },
-            "time": "2023-09-26T02:20:38+00:00"
+            "time": "2024-07-06T21:00:26+00:00"
         },
         {
             "name": "localheinz/diff",
@@ -1189,16 +1608,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.0.2",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13"
+                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/139676794dc1e9231bf7bcd123cfc0c99182cb13",
-                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/683130c2ff8c2739f4822ff7ac5c873ec529abd1",
+                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1",
                 "shasum": ""
             },
             "require": {
@@ -1209,7 +1628,7 @@
             },
             "require-dev": {
                 "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^9.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -1241,9 +1660,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.2"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.1.0"
             },
-            "time": "2024-03-05T20:51:40+00:00"
+            "time": "2024-07-01T20:03:41+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -1365,22 +1784,22 @@
         },
         {
             "name": "phpstan/extension-installer",
-            "version": "1.4.1",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/extension-installer.git",
-                "reference": "f6b87faf9fc7978eab2f7919a8760bc9f58f9203"
+                "reference": "85e90b3942d06b2326fba0403ec24fe912372936"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/extension-installer/zipball/f6b87faf9fc7978eab2f7919a8760bc9f58f9203",
-                "reference": "f6b87faf9fc7978eab2f7919a8760bc9f58f9203",
+                "url": "https://api.github.com/repos/phpstan/extension-installer/zipball/85e90b3942d06b2326fba0403ec24fe912372936",
+                "reference": "85e90b3942d06b2326fba0403ec24fe912372936",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2.0",
                 "php": "^7.2 || ^8.0",
-                "phpstan/phpstan": "^1.9.0"
+                "phpstan/phpstan": "^1.9.0 || ^2.0"
             },
             "require-dev": {
                 "composer/composer": "^2.0",
@@ -1401,24 +1820,28 @@
                 "MIT"
             ],
             "description": "Composer plugin for automatic installation of PHPStan extensions",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
             "support": {
                 "issues": "https://github.com/phpstan/extension-installer/issues",
-                "source": "https://github.com/phpstan/extension-installer/tree/1.4.1"
+                "source": "https://github.com/phpstan/extension-installer/tree/1.4.3"
             },
-            "time": "2024-06-10T08:20:49+00:00"
+            "time": "2024-09-04T20:21:43+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.11.4",
+            "version": "1.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "9100a76ce8015b9aa7125b9171ae3a76887b6c82"
+                "reference": "0fcbf194ab63d8159bb70d9aa3e1350051632009"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/9100a76ce8015b9aa7125b9171ae3a76887b6c82",
-                "reference": "9100a76ce8015b9aa7125b9171ae3a76887b6c82",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0fcbf194ab63d8159bb70d9aa3e1350051632009",
+                "reference": "0fcbf194ab63d8159bb70d9aa3e1350051632009",
                 "shasum": ""
             },
             "require": {
@@ -1463,7 +1886,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-06T12:19:22+00:00"
+            "time": "2024-09-09T08:10:35+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -1566,35 +1989,35 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.31",
+            "version": "9.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "48c34b5d8d983006bd2adc2d0de92963b9155965"
+                "reference": "85402a822d1ecf1db1096959413d35e1c37cf1a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/48c34b5d8d983006bd2adc2d0de92963b9155965",
-                "reference": "48c34b5d8d983006bd2adc2d0de92963b9155965",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/85402a822d1ecf1db1096959413d35e1c37cf1a5",
+                "reference": "85402a822d1ecf1db1096959413d35e1c37cf1a5",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
-                "nikic/php-parser": "^4.18 || ^5.0",
+                "nikic/php-parser": "^4.19.1 || ^5.1.0",
                 "php": ">=7.3",
-                "phpunit/php-file-iterator": "^3.0.3",
-                "phpunit/php-text-template": "^2.0.2",
-                "sebastian/code-unit-reverse-lookup": "^2.0.2",
-                "sebastian/complexity": "^2.0",
-                "sebastian/environment": "^5.1.2",
-                "sebastian/lines-of-code": "^1.0.3",
-                "sebastian/version": "^3.0.1",
-                "theseer/tokenizer": "^1.2.0"
+                "phpunit/php-file-iterator": "^3.0.6",
+                "phpunit/php-text-template": "^2.0.4",
+                "sebastian/code-unit-reverse-lookup": "^2.0.3",
+                "sebastian/complexity": "^2.0.3",
+                "sebastian/environment": "^5.1.5",
+                "sebastian/lines-of-code": "^1.0.4",
+                "sebastian/version": "^3.0.2",
+                "theseer/tokenizer": "^1.2.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3"
+                "phpunit/phpunit": "^9.6"
             },
             "suggest": {
                 "ext-pcov": "PHP extension that provides line coverage",
@@ -1603,7 +2026,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "9.2-dev"
+                    "dev-main": "9.2.x-dev"
                 }
             },
             "autoload": {
@@ -1632,7 +2055,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.31"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.32"
             },
             "funding": [
                 {
@@ -1640,7 +2063,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-02T06:37:42+00:00"
+            "time": "2024-08-22T04:23:01+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1885,45 +2308,45 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.19",
+            "version": "9.6.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a1a54a473501ef4cdeaae4e06891674114d79db8"
+                "reference": "49d7820565836236411f5dc002d16dd689cde42f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a1a54a473501ef4cdeaae4e06891674114d79db8",
-                "reference": "a1a54a473501ef4cdeaae4e06891674114d79db8",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/49d7820565836236411f5dc002d16dd689cde42f",
+                "reference": "49d7820565836236411f5dc002d16dd689cde42f",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "^1.3.1 || ^2",
+                "doctrine/instantiator": "^1.5.0 || ^2",
                 "ext-dom": "*",
                 "ext-json": "*",
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.10.1",
-                "phar-io/manifest": "^2.0.3",
-                "phar-io/version": "^3.0.2",
+                "myclabs/deep-copy": "^1.12.0",
+                "phar-io/manifest": "^2.0.4",
+                "phar-io/version": "^3.2.1",
                 "php": ">=7.3",
-                "phpunit/php-code-coverage": "^9.2.28",
-                "phpunit/php-file-iterator": "^3.0.5",
+                "phpunit/php-code-coverage": "^9.2.31",
+                "phpunit/php-file-iterator": "^3.0.6",
                 "phpunit/php-invoker": "^3.1.1",
-                "phpunit/php-text-template": "^2.0.3",
-                "phpunit/php-timer": "^5.0.2",
-                "sebastian/cli-parser": "^1.0.1",
-                "sebastian/code-unit": "^1.0.6",
+                "phpunit/php-text-template": "^2.0.4",
+                "phpunit/php-timer": "^5.0.3",
+                "sebastian/cli-parser": "^1.0.2",
+                "sebastian/code-unit": "^1.0.8",
                 "sebastian/comparator": "^4.0.8",
-                "sebastian/diff": "^4.0.3",
-                "sebastian/environment": "^5.1.3",
-                "sebastian/exporter": "^4.0.5",
-                "sebastian/global-state": "^5.0.1",
-                "sebastian/object-enumerator": "^4.0.3",
-                "sebastian/resource-operations": "^3.0.3",
-                "sebastian/type": "^3.2",
+                "sebastian/diff": "^4.0.6",
+                "sebastian/environment": "^5.1.5",
+                "sebastian/exporter": "^4.0.6",
+                "sebastian/global-state": "^5.0.7",
+                "sebastian/object-enumerator": "^4.0.4",
+                "sebastian/resource-operations": "^3.0.4",
+                "sebastian/type": "^3.2.1",
                 "sebastian/version": "^3.0.2"
             },
             "suggest": {
@@ -1968,7 +2391,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.19"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.20"
             },
             "funding": [
                 {
@@ -1984,7 +2407,247 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-05T04:35:58+00:00"
+            "time": "2024-07-10T11:45:39+00:00"
+        },
+        {
+            "name": "salient/phpdoc",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-phpdoc.git",
+                "reference": "143fa6e361696fcb35a6e1b305e9ad7758b19e8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-phpdoc/zipball/143fa6e361696fcb35a6e1b305e9ad7758b19e8d",
+                "reference": "143fa6e361696fcb35a6e1b305e9ad7758b19e8d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/utils": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\PHPDoc\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The phpdoc package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-08-05T01:36:42+00:00"
+        },
+        {
+            "name": "salient/phpstan",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-phpstan.git",
+                "reference": "5632f1e79e2f4285646b7db7e4b6df062e6a75c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-phpstan/zipball/5632f1e79e2f4285646b7db7e4b6df062e6a75c6",
+                "reference": "5632f1e79e2f4285646b7db7e4b6df062e6a75c6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "phpstan/phpstan": "^1.11",
+                "salient/utils": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "phpstan.extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Salient\\PHPStan\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The phpstan package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-08-26T07:01:16+00:00"
+        },
+        {
+            "name": "salient/sli",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-sli.git",
+                "reference": "e4d7f03d1f0ff048a1195d56534792fb43584de0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-sli/zipball/e4d7f03d1f0ff048a1195d56534792fb43584de0",
+                "reference": "e4d7f03d1f0ff048a1195d56534792fb43584de0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "salient/cli": "self.version",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/phpdoc": "self.version",
+                "salient/sync": "self.version",
+                "salient/utils": "self.version"
+            },
+            "suggest": {
+                "sebastian/diff": "Required to show changes to generated files"
+            },
+            "bin": [
+                "sli"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Sli\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The sli package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-07T04:16:18+00:00"
+        },
+        {
+            "name": "salient/sync",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-sync.git",
+                "reference": "5d2237c4d79ad9009baeee508281c41a82f16a54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-sync/zipball/5d2237c4d79ad9009baeee508281c41a82f16a54",
+                "reference": "5d2237c4d79ad9009baeee508281c41a82f16a54",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "salient/collections": "self.version",
+                "salient/console": "self.version",
+                "salient/container": "self.version",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/iterators": "self.version"
+            },
+            "suggest": {
+                "salient/cli": "Required by commands in Salient\\Sync\\Command",
+                "salient/curler": "Required by HttpSyncProvider",
+                "salient/db": "Required by DbSyncProvider",
+                "salient/http": "Required by HttpSyncProvider"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Sync\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The sync package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-11T05:38:44+00:00"
+        },
+        {
+            "name": "salient/testing",
+            "version": "v0.99.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-testing.git",
+                "reference": "57bd4fde464e7dc2d48c890028d86ff70dfae135"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-testing/zipball/57bd4fde464e7dc2d48c890028d86ff70dfae135",
+                "reference": "57bd4fde464e7dc2d48c890028d86ff70dfae135",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "salient/console": "self.version",
+                "salient/contracts": "self.version",
+                "salient/core": "self.version",
+                "salient/utils": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Testing\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The testing package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-09-10T07:26:17+00:00"
         },
         {
             "name": "sebastian/cli-parser",
