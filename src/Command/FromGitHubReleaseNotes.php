@@ -45,12 +45,18 @@ final class FromGitHubReleaseNotes extends CliCommand
 
     private static string $LinesToListsRegex;
 
-    public function description(): string
+    /**
+     * @inheritDoc
+     */
+    public function getDescription(): string
     {
         return 'Generate a changelog from GitHub release notes';
     }
 
-    protected function getOptionList(): array
+    /**
+     * @inheritDoc
+     */
+    protected function getOptionList(): iterable
     {
         return [
             Option::build()
@@ -214,6 +220,9 @@ EOF)
         ];
     }
 
+    /**
+     * @inheritDoc
+     */
     protected function getLongDescription(): ?string
     {
         return <<<EOF
@@ -230,9 +239,16 @@ rate-limited to 60 per hour per originating IP address.
 EOF;
     }
 
+    /**
+     * @inheritDoc
+     */
     protected function run(string ...$args)
     {
         Console::registerStderrTarget();
+
+        if (Env::getDebug()) {
+            $this->App->exportHar();
+        }
 
         $this->Names += $this->Repos;
 
@@ -252,10 +268,10 @@ EOF;
         if ($token !== null) {
             $token = new AccessToken($token, 'Bearer', null);
             Console::message(
-                Level::INFO,
                 'GITHUB_TOKEN value applied from environment to GitHub API requests',
                 null,
-                MessageType::SUCCESS
+                Level::INFO,
+                MessageType::SUCCESS,
             );
         }
 
@@ -356,11 +372,9 @@ EOF;
 
 Notable changes to this project are documented in this file.
 
-It is generated from the GitHub release notes of the project by
-[salient/changelog][].
+It is generated from the GitHub release notes of the project by [salient/changelog][].
 
-The format is based on [Keep a Changelog][], and this project adheres to
-[Semantic Versioning][].
+The format is based on [Keep a Changelog][], and this project adheres to [Semantic Versioning][].
 
 [salient/changelog]: https://github.com/salient-labs/changelog
 [Keep a Changelog]: https://keepachangelog.com/en/1.1.0/
