@@ -63,7 +63,7 @@ Generate a changelog for releases between two tags:
 ./tools/changelog --from v0.20.55 --to v0.20.56 salient-labs/toolkit
 ```
 
-```
+```markdown
 ## [v0.20.56] - 2023-09-06
 
 ### Deprecated
@@ -85,8 +85,8 @@ Generate a changelog for releases between two tags:
 ```
 
 Merge release notes from two repositories into one list of changes per release,
-report releases missing from the first repository (e.g. _"pretty-php for Visual
-Studio Code v0.4.44 was not released"_), and update `CHANGELOG.md`:
+report releases missing from the first repository, and update `CHANGELOG.md`
+(used in a CI workflow to generate [this changelog][changelog]):
 
 ```shell
 ./tools/changelog \
@@ -98,15 +98,11 @@ Studio Code v0.4.44 was not released"_), and update `CHANGELOG.md`:
   lkrms/vscode-pretty-php lkrms/pretty-php
 ```
 
-The last command is used in a CI workflow to generate the [changelog][]
-published with [this VS Code extension][vscode-ext].
-
 ## License
 
-MIT
+This project is licensed under the [MIT License][].
 
 [changelog]: https://github.com/lkrms/vscode-pretty-php/blob/main/CHANGELOG.md
 [Keep a Changelog]: https://keepachangelog.com/en/1.1.0/
+[MIT License]: LICENSE
 [PHIVE]: https://phar.io
-[vscode-ext]:
-  https://marketplace.visualstudio.com/items?itemName=lkrms.pretty-php
