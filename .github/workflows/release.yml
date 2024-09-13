@@ -6,14 +6,32 @@ on:
       - "v[0-9]*"
 
 jobs:
+  check-ci-runs:
+    name: Check CI workflow runs
+    runs-on: ubuntu-latest
+    outputs:
+      ci_required: ${{ steps.check-ci-runs.outputs.ci_required }}
+    steps:
+      - name: Check CI runs
+        id: check-ci-runs
+        uses: lkrms/check-ci-runs@v1
+        with:
+          ci_workflows: "CI,Release"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   ci:
     name: Run CI workflow
+    needs:
+      - check-ci-runs
+    if: ${{ needs.check-ci-runs.outputs.ci_required == 1 }}
     uses: ./.github/workflows/ci.yml
 
   release:
     name: Build phar and create release
     needs:
       - ci
+    if: ${{ !cancelled() && !failure() }}
     runs-on: ubuntu-latest
 
     steps:

@@ -15,7 +15,7 @@
             ],
             "notPath": [
                 "/^bin\\//",
-                "/^salient\\/toolkit\\/(?:bin|src\\/(?:Sli|Toolkit\\/(?:Contract\\/)?(?:Db|PHPStan|Sync)))\\//",
+                "/^salient\\/contracts\\/(?:Db|Sync)\\//",
                 "/^lkrms\\/dice\\/src\\/Loader\\//",
                 "/^psr\\/log\\/Psr\\/Log\\/Test\\//"
             ]
