@@ -19,10 +19,20 @@ use Salient\Utility\Inflect;
 use Salient\Utility\Regex;
 use Salient\Utility\Str;
 use DateTimeImmutable;
-use ReflectionParameter;
 
 final class FromGitHubReleaseNotes extends CliCommand
 {
+    private const TEMPLATE = <<<EOF
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
+EOF;
+
     /** @var string[] */
     private array $Repos = [];
     /** @var string[] */
@@ -40,10 +50,6 @@ final class FromGitHubReleaseNotes extends CliCommand
     private ?string $OutputFile = null;
     private bool $Flush = false;
     private bool $Quiet = false;
-
-    // --
-
-    private static string $LinesToListsRegex;
 
     /**
      * @inheritDoc
@@ -469,8 +475,9 @@ EOF;
             }
 
             if ($this->Merge) {
-                $blocks = implode("\n\n", $blocks);
-                $merged = Str::mergeLists($blocks, "\n\n", null, $this->getLinesToListsRegex(), false, true);
+                $blocks = Str::setEol(self::TEMPLATE . implode($eol . $eol, $blocks));
+                $merged = Str::mergeLists($blocks, "\n\n", null, null, false, true);
+                $merged = Regex::replace('/(?<=\n|^)### (?:Added|Changed|Deprecated|Removed|Fixed|Security)(?:\n\n(?!\h*[-*] )|$)/D', '', $merged);
                 fprintf($fp, "%s{$eol}{$eol}", Str::setEol($merged, $eol));
                 continue;
             }
@@ -508,15 +515,5 @@ EOF;
             return false;
         }
         return true;
-    }
-
-    private static function getLinesToListsRegex(): string
-    {
-        if (isset(self::$LinesToListsRegex)) {
-            return self::$LinesToListsRegex;
-        }
-        /** @var string */
-        $default = (new ReflectionParameter([Str::class, 'mergeLists'], 'regex'))->getDefaultValue();
-        return self::$LinesToListsRegex = $default;
     }
 }
