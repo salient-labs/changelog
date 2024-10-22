@@ -415,7 +415,7 @@
         },
         {
             "name": "salient/cache",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-cache.git",
@@ -460,16 +460,16 @@
         },
         {
             "name": "salient/cli",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-cli.git",
-                "reference": "7c793db32a4ad46206c60f515dba0198dbbb499e"
+                "reference": "00adb339f25f67ba8382304bfccbd1a4f7a62402"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-cli/zipball/7c793db32a4ad46206c60f515dba0198dbbb499e",
-                "reference": "7c793db32a4ad46206c60f515dba0198dbbb499e",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-cli/zipball/00adb339f25f67ba8382304bfccbd1a4f7a62402",
+                "reference": "00adb339f25f67ba8382304bfccbd1a4f7a62402",
                 "shasum": ""
             },
             "require": {
@@ -501,20 +501,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-08-31T11:58:24+00:00"
+            "time": "2024-10-02T13:51:57+00:00"
         },
         {
             "name": "salient/collections",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-collections.git",
-                "reference": "db64efb063e5d1c9352725c41c797332b3f2ec4f"
+                "reference": "b6e5a94a46183605424788247292f14417c8d118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-collections/zipball/db64efb063e5d1c9352725c41c797332b3f2ec4f",
-                "reference": "db64efb063e5d1c9352725c41c797332b3f2ec4f",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-collections/zipball/b6e5a94a46183605424788247292f14417c8d118",
+                "reference": "b6e5a94a46183605424788247292f14417c8d118",
                 "shasum": ""
             },
             "require": {
@@ -544,20 +544,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-08-05T01:36:42+00:00"
+            "time": "2024-09-16T03:27:04+00:00"
         },
         {
             "name": "salient/console",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-console.git",
-                "reference": "4337cbfb3c6f965beab147052d842b1934635504"
+                "reference": "e542b0f976f693ade38f54507b19ce5bd6f82a8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-console/zipball/4337cbfb3c6f965beab147052d842b1934635504",
-                "reference": "4337cbfb3c6f965beab147052d842b1934635504",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-console/zipball/e542b0f976f693ade38f54507b19ce5bd6f82a8a",
+                "reference": "e542b0f976f693ade38f54507b19ce5bd6f82a8a",
                 "shasum": ""
             },
             "require": {
@@ -594,20 +594,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-10T03:19:13+00:00"
+            "time": "2024-10-16T10:54:24+00:00"
         },
         {
             "name": "salient/container",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-container.git",
-                "reference": "e8ecd81e764fac096b4d7e9a0ec927f6e5574dcc"
+                "reference": "40886871b9665c72efa1b869ac84a0214a73758d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-container/zipball/e8ecd81e764fac096b4d7e9a0ec927f6e5574dcc",
-                "reference": "e8ecd81e764fac096b4d7e9a0ec927f6e5574dcc",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-container/zipball/40886871b9665c72efa1b869ac84a0214a73758d",
+                "reference": "40886871b9665c72efa1b869ac84a0214a73758d",
                 "shasum": ""
             },
             "require": {
@@ -648,20 +648,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-11T05:42:01+00:00"
+            "time": "2024-09-23T05:14:50+00:00"
         },
         {
             "name": "salient/contracts",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-contracts.git",
-                "reference": "8946d28ebe0be0dbe9f7bce98915069302987e53"
+                "reference": "9343bb6b48a852504041419afd1d8f8c4c08fcfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-contracts/zipball/8946d28ebe0be0dbe9f7bce98915069302987e53",
-                "reference": "8946d28ebe0be0dbe9f7bce98915069302987e53",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-contracts/zipball/9343bb6b48a852504041419afd1d8f8c4c08fcfd",
+                "reference": "9343bb6b48a852504041419afd1d8f8c4c08fcfd",
                 "shasum": ""
             },
             "require": {
@@ -697,20 +697,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-11T05:42:01+00:00"
+            "time": "2024-10-07T08:13:31+00:00"
         },
         {
             "name": "salient/core",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-core.git",
-                "reference": "f988baaa72fcb7f576986699180694306d6ce975"
+                "reference": "82cb46844ef3b1c0ebd83ae06f07347fd38f324f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-core/zipball/f988baaa72fcb7f576986699180694306d6ce975",
-                "reference": "f988baaa72fcb7f576986699180694306d6ce975",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-core/zipball/82cb46844ef3b1c0ebd83ae06f07347fd38f324f",
+                "reference": "82cb46844ef3b1c0ebd83ae06f07347fd38f324f",
                 "shasum": ""
             },
             "require": {
@@ -745,20 +745,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-11T05:42:01+00:00"
+            "time": "2024-10-16T10:54:24+00:00"
         },
         {
             "name": "salient/curler",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-curler.git",
-                "reference": "ea400c08d5f65942770e2b95d9538e7455849955"
+                "reference": "0eb992916f568d49f2af074d015404d0f9988e28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-curler/zipball/ea400c08d5f65942770e2b95d9538e7455849955",
-                "reference": "ea400c08d5f65942770e2b95d9538e7455849955",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-curler/zipball/0eb992916f568d49f2af074d015404d0f9988e28",
+                "reference": "0eb992916f568d49f2af074d015404d0f9988e28",
                 "shasum": ""
             },
             "require": {
@@ -794,20 +794,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-11T05:42:01+00:00"
+            "time": "2024-09-24T04:43:52+00:00"
         },
         {
             "name": "salient/http",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-http.git",
-                "reference": "49b7b8382d0b7c8c08910315cc234d8d3096c100"
+                "reference": "017ae280d6ff08a4cfd780338edbbd9f97fbd362"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-http/zipball/49b7b8382d0b7c8c08910315cc234d8d3096c100",
-                "reference": "49b7b8382d0b7c8c08910315cc234d8d3096c100",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-http/zipball/017ae280d6ff08a4cfd780338edbbd9f97fbd362",
+                "reference": "017ae280d6ff08a4cfd780338edbbd9f97fbd362",
                 "shasum": ""
             },
             "require": {
@@ -849,20 +849,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-11T05:38:44+00:00"
+            "time": "2024-10-17T03:43:12+00:00"
         },
         {
             "name": "salient/iterators",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-iterators.git",
-                "reference": "fb99faad223beeaa7ab0b43b24cd77ee60302244"
+                "reference": "345ba02ee18585b0f5f5cd8cf46d03814215335b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-iterators/zipball/fb99faad223beeaa7ab0b43b24cd77ee60302244",
-                "reference": "fb99faad223beeaa7ab0b43b24cd77ee60302244",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-iterators/zipball/345ba02ee18585b0f5f5cd8cf46d03814215335b",
+                "reference": "345ba02ee18585b0f5f5cd8cf46d03814215335b",
                 "shasum": ""
             },
             "require": {
@@ -891,20 +891,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-08-13T06:46:57+00:00"
+            "time": "2024-10-17T03:43:12+00:00"
         },
         {
             "name": "salient/utils",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-utils.git",
-                "reference": "2bacf2647e6cc86969df1038cfcc6890f91ef64d"
+                "reference": "4d3c8bcb700e9299c651f9be76e01b54899946ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-utils/zipball/2bacf2647e6cc86969df1038cfcc6890f91ef64d",
-                "reference": "2bacf2647e6cc86969df1038cfcc6890f91ef64d",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-utils/zipball/4d3c8bcb700e9299c651f9be76e01b54899946ee",
+                "reference": "4d3c8bcb700e9299c651f9be76e01b54899946ee",
                 "shasum": ""
             },
             "require": {
@@ -938,7 +938,7 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-06T01:25:54+00:00"
+            "time": "2024-10-22T05:53:59+00:00"
         }
     ],
     "packages-dev": [
@@ -1014,16 +1014,16 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.43.0",
+            "version": "2.44.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "4b46330c84bb8f43fac79f5c5a05162fc7c80d75"
+                "reference": "bd0c446426bb837ae0cc9f97948167e658bd11d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/4b46330c84bb8f43fac79f5c5a05162fc7c80d75",
-                "reference": "4b46330c84bb8f43fac79f5c5a05162fc7c80d75",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/bd0c446426bb837ae0cc9f97948167e658bd11d2",
+                "reference": "bd0c446426bb837ae0cc9f97948167e658bd11d2",
                 "shasum": ""
             },
             "require": {
@@ -1034,20 +1034,20 @@
                 "ext-json": "*",
                 "justinrainbow/json-schema": "^5.2.12",
                 "localheinz/diff": "^1.1.1",
-                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
                 "composer/composer": "^2.7.7",
-                "ergebnis/license": "^2.4.0",
-                "ergebnis/php-cs-fixer-config": "^6.30.1",
-                "ergebnis/phpunit-slow-test-detector": "^2.14.0",
+                "ergebnis/license": "^2.5.0",
+                "ergebnis/php-cs-fixer-config": "^6.37.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.16.0",
                 "fakerphp/faker": "^1.23.1",
                 "infection/infection": "~0.26.6",
-                "phpunit/phpunit": "^9.6.19",
+                "phpunit/phpunit": "^9.6.20",
                 "psalm/plugin-phpunit": "~0.19.0",
-                "rector/rector": "^1.1.0",
-                "symfony/filesystem": "^5.4.40",
-                "vimeo/psalm": "^5.24.0"
+                "rector/rector": "^1.2.5",
+                "symfony/filesystem": "^5.4.41",
+                "vimeo/psalm": "^5.26.1"
             },
             "type": "composer-plugin",
             "extra": {
@@ -1087,37 +1087,37 @@
                 "security": "https://github.com/ergebnis/composer-normalize/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/composer-normalize"
             },
-            "time": "2024-06-16T13:22:18+00:00"
+            "time": "2024-09-30T21:56:22+00:00"
         },
         {
             "name": "ergebnis/json",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json.git",
-                "reference": "a457f25a5ba7ea11fc94f84d53678c5211abfce0"
+                "reference": "84051b4e243d6a8e2f8271604b11ffa52d29bc7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json/zipball/a457f25a5ba7ea11fc94f84d53678c5211abfce0",
-                "reference": "a457f25a5ba7ea11fc94f84d53678c5211abfce0",
+                "url": "https://api.github.com/repos/ergebnis/json/zipball/84051b4e243d6a8e2f8271604b11ffa52d29bc7a",
+                "reference": "84051b4e243d6a8e2f8271604b11ffa52d29bc7a",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
                 "ergebnis/data-provider": "^3.2.0",
                 "ergebnis/license": "^2.4.0",
-                "ergebnis/php-cs-fixer-config": "^6.20.0",
-                "ergebnis/phpunit-slow-test-detector": "^2.9.0",
+                "ergebnis/php-cs-fixer-config": "^6.36.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.15.1",
                 "fakerphp/faker": "^1.23.1",
                 "infection/infection": "~0.26.6",
-                "phpunit/phpunit": "^9.6.16",
-                "psalm/plugin-phpunit": "~0.18.4",
-                "rector/rector": "~0.19.2",
-                "vimeo/psalm": "^5.20.0"
+                "phpunit/phpunit": "^9.6.18",
+                "psalm/plugin-phpunit": "~0.19.0",
+                "rector/rector": "^1.2.5",
+                "vimeo/psalm": "^5.26.1"
             },
             "type": "library",
             "extra": {
@@ -1152,20 +1152,20 @@
                 "security": "https://github.com/ergebnis/json/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/json"
             },
-            "time": "2024-01-29T15:09:24+00:00"
+            "time": "2024-09-27T15:01:05+00:00"
         },
         {
             "name": "ergebnis/json-normalizer",
-            "version": "4.5.0",
+            "version": "4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-normalizer.git",
-                "reference": "f0ee9e70739f121b27fac8b743e4a52b23de2152"
+                "reference": "859fd3cee417f0b10a8e6ffb8dbeb03587106b8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-normalizer/zipball/f0ee9e70739f121b27fac8b743e4a52b23de2152",
-                "reference": "f0ee9e70739f121b27fac8b743e4a52b23de2152",
+                "url": "https://api.github.com/repos/ergebnis/json-normalizer/zipball/859fd3cee417f0b10a8e6ffb8dbeb03587106b8b",
+                "reference": "859fd3cee417f0b10a8e6ffb8dbeb03587106b8b",
                 "shasum": ""
             },
             "require": {
@@ -1175,20 +1175,20 @@
                 "ergebnis/json-schema-validator": "^4.2.0",
                 "ext-json": "*",
                 "justinrainbow/json-schema": "^5.2.12",
-                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
-                "composer/semver": "^3.4.0",
+                "composer/semver": "^3.4.3",
                 "ergebnis/data-provider": "^3.2.0",
                 "ergebnis/license": "^2.4.0",
-                "ergebnis/php-cs-fixer-config": "^6.20.0",
-                "ergebnis/phpunit-slow-test-detector": "^2.9.0",
+                "ergebnis/php-cs-fixer-config": "^6.36.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.15.1",
                 "fakerphp/faker": "^1.23.1",
                 "infection/infection": "~0.26.6",
-                "phpunit/phpunit": "^9.6.16",
-                "psalm/plugin-phpunit": "~0.18.4",
-                "rector/rector": "~0.19.4",
-                "vimeo/psalm": "^5.20.0"
+                "phpunit/phpunit": "^9.6.19",
+                "psalm/plugin-phpunit": "~0.19.0",
+                "rector/rector": "^1.2.5",
+                "vimeo/psalm": "^5.26.1"
             },
             "suggest": {
                 "composer/semver": "If you want to use ComposerJsonNormalizer or VersionConstraintNormalizer"
@@ -1221,39 +1221,43 @@
                 "security": "https://github.com/ergebnis/json-normalizer/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/json-normalizer"
             },
-            "time": "2024-01-30T09:10:15+00:00"
+            "time": "2024-09-27T15:11:59+00:00"
         },
         {
             "name": "ergebnis/json-pointer",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-pointer.git",
-                "reference": "b654757d873050622c2166f55ab25d04685261c5"
+                "reference": "f6ff71e69305b8ab5e4457e374b35dcd0812609b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-pointer/zipball/b654757d873050622c2166f55ab25d04685261c5",
-                "reference": "b654757d873050622c2166f55ab25d04685261c5",
+                "url": "https://api.github.com/repos/ergebnis/json-pointer/zipball/f6ff71e69305b8ab5e4457e374b35dcd0812609b",
+                "reference": "f6ff71e69305b8ab5e4457e374b35dcd0812609b",
                 "shasum": ""
             },
             "require": {
-                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
+                "ergebnis/composer-normalize": "^2.43.0",
                 "ergebnis/data-provider": "^3.2.0",
                 "ergebnis/license": "^2.4.0",
-                "ergebnis/php-cs-fixer-config": "^6.20.0",
-                "ergebnis/phpunit-slow-test-detector": "^2.9.0",
+                "ergebnis/php-cs-fixer-config": "^6.32.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.15.0",
                 "fakerphp/faker": "^1.23.1",
                 "infection/infection": "~0.26.6",
-                "phpunit/phpunit": "^9.6.16",
-                "psalm/plugin-phpunit": "~0.18.4",
-                "rector/rector": "~0.19.2",
-                "vimeo/psalm": "^5.20.0"
+                "phpunit/phpunit": "^9.6.19",
+                "psalm/plugin-phpunit": "~0.19.0",
+                "rector/rector": "^1.2.1",
+                "vimeo/psalm": "^5.25.0"
             },
             "type": "library",
             "extra": {
+                "branch-alias": {
+                    "dev-main": "3.4-dev"
+                },
                 "composer-normalize": {
                     "indent-size": 2,
                     "indent-style": "space"
@@ -1287,38 +1291,38 @@
                 "security": "https://github.com/ergebnis/json-pointer/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/json-pointer"
             },
-            "time": "2024-01-29T16:37:15+00:00"
+            "time": "2024-09-27T15:47:15+00:00"
         },
         {
             "name": "ergebnis/json-printer",
-            "version": "3.5.0",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-printer.git",
-                "reference": "549e16fe6de34b8c3aee7b421be12caa552f3ced"
+                "reference": "d2e51379dc62d73017a779a78fcfba568de39e0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-printer/zipball/549e16fe6de34b8c3aee7b421be12caa552f3ced",
-                "reference": "549e16fe6de34b8c3aee7b421be12caa552f3ced",
+                "url": "https://api.github.com/repos/ergebnis/json-printer/zipball/d2e51379dc62d73017a779a78fcfba568de39e0a",
+                "reference": "d2e51379dc62d73017a779a78fcfba568de39e0a",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
                 "ergebnis/data-provider": "^3.2.0",
                 "ergebnis/license": "^2.4.0",
-                "ergebnis/php-cs-fixer-config": "^6.20.0",
-                "ergebnis/phpunit-slow-test-detector": "^2.9.0",
+                "ergebnis/php-cs-fixer-config": "^6.36.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.15.1",
                 "fakerphp/faker": "^1.23.1",
                 "infection/infection": "~0.26.6",
-                "phpunit/phpunit": "^9.6.16",
-                "psalm/plugin-phpunit": "~0.18.4",
-                "rector/rector": "~0.19.2",
-                "vimeo/psalm": "^5.20.0"
+                "phpunit/phpunit": "^9.6.19",
+                "psalm/plugin-phpunit": "~0.19.0",
+                "rector/rector": "~1.2.5",
+                "vimeo/psalm": "^5.26.1"
             },
             "type": "library",
             "autoload": {
@@ -1349,20 +1353,20 @@
                 "security": "https://github.com/ergebnis/json-printer/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/json-printer"
             },
-            "time": "2024-01-29T15:33:37+00:00"
+            "time": "2024-09-27T15:19:56+00:00"
         },
         {
             "name": "ergebnis/json-schema-validator",
-            "version": "4.2.0",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-schema-validator.git",
-                "reference": "10ed514fdc3f9b71f8a92c567afea21a2f6fa1ef"
+                "reference": "73f938f8995c6ad1e37d2c1dfeaa8336861f9db8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-schema-validator/zipball/10ed514fdc3f9b71f8a92c567afea21a2f6fa1ef",
-                "reference": "10ed514fdc3f9b71f8a92c567afea21a2f6fa1ef",
+                "url": "https://api.github.com/repos/ergebnis/json-schema-validator/zipball/73f938f8995c6ad1e37d2c1dfeaa8336861f9db8",
+                "reference": "73f938f8995c6ad1e37d2c1dfeaa8336861f9db8",
                 "shasum": ""
             },
             "require": {
@@ -1370,19 +1374,19 @@
                 "ergebnis/json-pointer": "^3.4.0",
                 "ext-json": "*",
                 "justinrainbow/json-schema": "^5.2.12",
-                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
                 "ergebnis/data-provider": "^3.2.0",
                 "ergebnis/license": "^2.4.0",
-                "ergebnis/php-cs-fixer-config": "^6.20.0",
-                "ergebnis/phpunit-slow-test-detector": "^2.9.0",
+                "ergebnis/php-cs-fixer-config": "^6.36.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.15.1",
                 "fakerphp/faker": "^1.23.1",
                 "infection/infection": "~0.26.6",
-                "phpunit/phpunit": "^9.6.16",
-                "psalm/plugin-phpunit": "~0.18.4",
-                "rector/rector": "~0.19.2",
-                "vimeo/psalm": "^5.20.0"
+                "phpunit/phpunit": "^9.6.20",
+                "psalm/plugin-phpunit": "~0.19.0",
+                "rector/rector": "^1.2.5",
+                "vimeo/psalm": "^5.26.1"
             },
             "type": "library",
             "extra": {
@@ -1419,7 +1423,7 @@
                 "security": "https://github.com/ergebnis/json-schema-validator/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/json-schema-validator"
             },
-            "time": "2024-01-29T16:50:15+00:00"
+            "time": "2024-09-27T15:16:33+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1608,16 +1612,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.1.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1"
+                "reference": "8eea230464783aa9671db8eea6f8c6ac5285794b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/683130c2ff8c2739f4822ff7ac5c873ec529abd1",
-                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/8eea230464783aa9671db8eea6f8c6ac5285794b",
+                "reference": "8eea230464783aa9671db8eea6f8c6ac5285794b",
                 "shasum": ""
             },
             "require": {
@@ -1660,9 +1664,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.1.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.3.1"
             },
-            "time": "2024-07-01T20:03:41+00:00"
+            "time": "2024-10-08T18:51:32+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -1832,16 +1836,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.12.3",
+            "version": "1.12.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "0fcbf194ab63d8159bb70d9aa3e1350051632009"
+                "reference": "dc2b9976bd8b0f84ec9b0e50cc35378551de7af0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0fcbf194ab63d8159bb70d9aa3e1350051632009",
-                "reference": "0fcbf194ab63d8159bb70d9aa3e1350051632009",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/dc2b9976bd8b0f84ec9b0e50cc35378551de7af0",
+                "reference": "dc2b9976bd8b0f84ec9b0e50cc35378551de7af0",
                 "shasum": ""
             },
             "require": {
@@ -1886,25 +1890,25 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-09T08:10:35+00:00"
+            "time": "2024-10-18T11:12:07+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-deprecation-rules.git",
-                "reference": "fa8cce7720fa782899a0aa97b6a41225d1bb7b26"
+                "reference": "f94d246cc143ec5a23da868f8f7e1393b50eaa82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/fa8cce7720fa782899a0aa97b6a41225d1bb7b26",
-                "reference": "fa8cce7720fa782899a0aa97b6a41225d1bb7b26",
+                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/f94d246cc143ec5a23da868f8f7e1393b50eaa82",
+                "reference": "f94d246cc143ec5a23da868f8f7e1393b50eaa82",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0",
-                "phpstan/phpstan": "^1.11"
+                "phpstan/phpstan": "^1.12"
             },
             "require-dev": {
                 "php-parallel-lint/php-parallel-lint": "^1.2",
@@ -1931,9 +1935,9 @@
             "description": "PHPStan rules for detecting usage of deprecated classes, methods, properties, constants and traits.",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-deprecation-rules/issues",
-                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/1.2.0"
+                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/1.2.1"
             },
-            "time": "2024-04-20T06:39:48+00:00"
+            "time": "2024-09-11T15:52:35+00:00"
         },
         {
             "name": "phpstan/phpstan-phpunit",
@@ -2308,16 +2312,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.20",
+            "version": "9.6.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "49d7820565836236411f5dc002d16dd689cde42f"
+                "reference": "de6abf3b6f8dd955fac3caad3af7a9504e8c2ffa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/49d7820565836236411f5dc002d16dd689cde42f",
-                "reference": "49d7820565836236411f5dc002d16dd689cde42f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/de6abf3b6f8dd955fac3caad3af7a9504e8c2ffa",
+                "reference": "de6abf3b6f8dd955fac3caad3af7a9504e8c2ffa",
                 "shasum": ""
             },
             "require": {
@@ -2332,7 +2336,7 @@
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=7.3",
-                "phpunit/php-code-coverage": "^9.2.31",
+                "phpunit/php-code-coverage": "^9.2.32",
                 "phpunit/php-file-iterator": "^3.0.6",
                 "phpunit/php-invoker": "^3.1.1",
                 "phpunit/php-text-template": "^2.0.4",
@@ -2391,7 +2395,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.20"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.21"
             },
             "funding": [
                 {
@@ -2407,20 +2411,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-10T11:45:39+00:00"
+            "time": "2024-09-19T10:50:18+00:00"
         },
         {
             "name": "salient/phpdoc",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-phpdoc.git",
-                "reference": "143fa6e361696fcb35a6e1b305e9ad7758b19e8d"
+                "reference": "887515923637c3863012c9e9784ca91b75d603d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-phpdoc/zipball/143fa6e361696fcb35a6e1b305e9ad7758b19e8d",
-                "reference": "143fa6e361696fcb35a6e1b305e9ad7758b19e8d",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-phpdoc/zipball/887515923637c3863012c9e9784ca91b75d603d9",
+                "reference": "887515923637c3863012c9e9784ca91b75d603d9",
                 "shasum": ""
             },
             "require": {
@@ -2450,20 +2454,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-08-05T01:36:42+00:00"
+            "time": "2024-10-22T05:50:55+00:00"
         },
         {
             "name": "salient/phpstan",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-phpstan.git",
-                "reference": "5632f1e79e2f4285646b7db7e4b6df062e6a75c6"
+                "reference": "19c82bcaf9848e6eaeda71ee846f436f67d037ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-phpstan/zipball/5632f1e79e2f4285646b7db7e4b6df062e6a75c6",
-                "reference": "5632f1e79e2f4285646b7db7e4b6df062e6a75c6",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-phpstan/zipball/19c82bcaf9848e6eaeda71ee846f436f67d037ca",
+                "reference": "19c82bcaf9848e6eaeda71ee846f436f67d037ca",
                 "shasum": ""
             },
             "require": {
@@ -2499,20 +2503,64 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-08-26T07:01:16+00:00"
+            "time": "2024-09-17T01:49:43+00:00"
         },
         {
-            "name": "salient/sli",
-            "version": "v0.99.50",
+            "name": "salient/polyfills",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
-                "url": "https://github.com/salient-labs/toolkit-sli.git",
-                "reference": "e4d7f03d1f0ff048a1195d56534792fb43584de0"
+                "url": "https://github.com/salient-labs/toolkit-polyfills.git",
+                "reference": "5b76749aef5ea4f1bf44f69656b006a845812860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-sli/zipball/e4d7f03d1f0ff048a1195d56534792fb43584de0",
-                "reference": "e4d7f03d1f0ff048a1195d56534792fb43584de0",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-polyfills/zipball/5b76749aef5ea4f1bf44f69656b006a845812860",
+                "reference": "5b76749aef5ea4f1bf44f69656b006a845812860",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "salient/utils": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Salient\\Polyfill\\": ""
+                },
+                "classmap": [
+                    "stubs/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Arms",
+                    "email": "luke@linacreative.com"
+                }
+            ],
+            "description": "The polyfills package of the Salient toolkit",
+            "support": {
+                "issues": "https://github.com/salient-labs/toolkit/issues",
+                "source": "https://github.com/salient-labs/toolkit"
+            },
+            "time": "2024-10-15T22:36:55+00:00"
+        },
+        {
+            "name": "salient/sli",
+            "version": "v0.99.58",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salient-labs/toolkit-sli.git",
+                "reference": "427d295479be8d49a03ae6072f5438c808b2c294"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-sli/zipball/427d295479be8d49a03ae6072f5438c808b2c294",
+                "reference": "427d295479be8d49a03ae6072f5438c808b2c294",
                 "shasum": ""
             },
             "require": {
@@ -2521,6 +2569,7 @@
                 "salient/contracts": "self.version",
                 "salient/core": "self.version",
                 "salient/phpdoc": "self.version",
+                "salient/polyfills": "self.version",
                 "salient/sync": "self.version",
                 "salient/utils": "self.version"
             },
@@ -2532,6 +2581,9 @@
             ],
             "type": "library",
             "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
                 "psr-4": {
                     "Salient\\Sli\\": ""
                 }
@@ -2551,20 +2603,20 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-07T04:16:18+00:00"
+            "time": "2024-10-22T05:58:56+00:00"
         },
         {
             "name": "salient/sync",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-sync.git",
-                "reference": "5d2237c4d79ad9009baeee508281c41a82f16a54"
+                "reference": "013484d933e7628fd6fc98f93bac0e53a6c713bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salient-labs/toolkit-sync/zipball/5d2237c4d79ad9009baeee508281c41a82f16a54",
-                "reference": "5d2237c4d79ad9009baeee508281c41a82f16a54",
+                "url": "https://api.github.com/repos/salient-labs/toolkit-sync/zipball/013484d933e7628fd6fc98f93bac0e53a6c713bb",
+                "reference": "013484d933e7628fd6fc98f93bac0e53a6c713bb",
                 "shasum": ""
             },
             "require": {
@@ -2603,11 +2655,11 @@
                 "issues": "https://github.com/salient-labs/toolkit/issues",
                 "source": "https://github.com/salient-labs/toolkit"
             },
-            "time": "2024-09-11T05:38:44+00:00"
+            "time": "2024-10-15T02:47:38+00:00"
         },
         {
             "name": "salient/testing",
-            "version": "v0.99.50",
+            "version": "v0.99.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salient-labs/toolkit-testing.git",
@@ -3665,13 +3717,13 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.4"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "7.4.33"
     },
